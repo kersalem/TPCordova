@@ -59,7 +59,7 @@
 <div data-role="page" id="vueChargement">
     <header id="shifumiHeader">
         <div data-role="header" data-position="fixed" data-id="monHeader" data-theme="b">
-            <h1>Shifumi</h1>
+            <h1>Morpions</h1>
         </div>
     </header>
     <div data-role="main" class="ui-content">
@@ -75,9 +75,22 @@
 <!--======== PAGE "vueAccueil" - saisie nom joueur  ========-->
 <div data-role="page" id="vueAccueil">
     <div data-role="main" class="ui-content">
-        <p>Rappel des règles : la pierre bat les ciseaux (en les émoussant), les ciseaux battent la feuille (en la
-            coupant), la feuille bat la pierre (en l'enveloppant)</p>
-        <input type="text" id="nomJoueur" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
+        <div class="indexContainer">
+            <div class="jouerIndex">
+                <h3>Joueur 1</h3>
+                <p>pseudo</p>
+                <input type="text" id="nomJoueur" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
+                <button onclick="controleur.vueAccueil.nouvellePartie()">Photo</button>
+                <img src="">
+            </div>
+            <div class="jouerIndex">
+                <h3>Joueur 2</h3>
+                <p>pseudo</p>
+                <input type="text" id="nomJoueur2" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
+                <button onclick="controleur.vueAccueil.nouvellePartie()">Photo</button>
+                <img src="" />
+            </div>
+        </div>
         <button onclick="controleur.vueAccueil.nouvellePartie()">Jouer</button>
     </div>
 </div>

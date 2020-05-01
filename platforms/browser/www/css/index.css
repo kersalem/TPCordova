@@ -6,3 +6,33 @@
     display: block;
     margin: auto;
 }
+
+.indexContainer {
+    color: white;
+    display:flex;
+    flex-direction: row;
+    background-color: #005599;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.jouerIndex {
+    width: 45%;
+    margin: 2px;
+    padding: 5px;
+    height: 80vh;
+}
+
+div:first-child {
+    border-right: 2px solid white;
+}
+
+img {
+    justify-self: center;
+    align-self: center;
+    width: 45%;
+    height:20vh;
+    margin: 2px;
+    padding: 5px;
+    background-color: tomato;
+}

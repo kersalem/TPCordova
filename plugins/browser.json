@@ -15,6 +15,12 @@
     },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
+    },
+    "cordova-plugin-x-toast": {
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
+    },
+    "cordova-plugin-camera": {
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
     }
   },
   "dependent_plugins": {}
