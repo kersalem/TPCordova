@@ -148,23 +148,41 @@ $(document).on("pagebeforeshow", "#vueFin", function () {
 /// Controlleur camera
 controleur.cameraController= {
     takePicture: function () {
+        // Appel méthode du modèle permettant de prendre une photo
+        console.log('je rentre ici 1')
+        window.modele.takePicture(
 
-        modele.takePicture(
-
+            // Appel méthode du modèle permettant de prendre une photo
             function(uneImage) {
-
+                console.log('je rentre ici 2')
+                // on récupère un objet Image
                 $("#cameraImage").attr("src", uneImage.getBase64().show);
                 uneImage.insert(
-                    function () { plugins.toast.showShortCenter("Image enregistrée");},
-                    function () { plugins.toast.showShortCenter("Image non enregistrée");}
+                function () {
+                    console.log('je rentre ici 3');
+                    plugins.toast.showShortCenter("Image enregistrée");
+                    console.log('je rentre ici 4');
+
+                },
+                    function () {
+                        console.log('je rentre ici 5');
+                        plugins.toast.showShortCenter("Image non enregistrée");
+                        console.log('je rentre ici 6');
+
+                    }
                  );
             },
+            // erreurCB : on affiche un message approprié
+            function () {
+                console.log('je rentre ici 7');
 
-            function () { plugins.toast.showShortCenter("Impossible de prendre une photo"); }
+                plugins.toast.showShortCenter("Impossible de prendre une photo");
+            }
         );
     }
 };
 
+// Pour réinitialiser le champ cameraImage à l'affichage de la page camera
 $(document).on("pagebeforeshow", "#camera",
     function () {
         $("#cameraImage").attr("src", "").hide();
