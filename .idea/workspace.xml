@@ -2,23 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/platform_www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/project.properties" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/project.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/browser.json" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/browser.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/platform_www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/platform_www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/cordova_plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/cordova_plugins.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/css/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/browser.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/browser.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/fetch.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/fetch.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/modele.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/modele.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +31,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DemoPlugins" />
   </component>
   <component name="RunManager">
     <configuration name="Run PhoneGap" type="PhoneGap" factoryName="PhoneGap/Cordova" nameIsGenerated="true">
@@ -88,7 +80,7 @@
       <workItem from="1587196380492" duration="1540000" />
       <workItem from="1587198923970" duration="703000" />
       <workItem from="1587201800904" duration="610000" />
-      <workItem from="1588328702922" duration="3148000" />
+      <workItem from="1588328702922" duration="10781000" />
     </task>
     <servers />
   </component>
@@ -104,36 +96,42 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588340211633" />
-    <state x="508" y="193" key="FileChooserDialogImpl" timestamp="1587121684814">
+    <state x="508" y="193" key="FileChooserDialogImpl" timestamp="1588353329152">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1587121684814" />
-    <state width="1579" height="99" key="GridCell.Tab.0.bottom" timestamp="1588340623196">
+    <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588353329152" />
+    <state width="1579" height="160" key="GridCell.Tab.0.bottom" timestamp="1588354744229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="99" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588340623196" />
-    <state width="1579" height="99" key="GridCell.Tab.0.center" timestamp="1588340623196">
+    <state width="1579" height="160" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588354744229" />
+    <state width="1579" height="160" key="GridCell.Tab.0.center" timestamp="1588354744229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="99" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588340623196" />
-    <state width="1579" height="99" key="GridCell.Tab.0.left" timestamp="1588340623196">
+    <state width="1579" height="160" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588354744229" />
+    <state width="1579" height="160" key="GridCell.Tab.0.left" timestamp="1588354744229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="99" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588340623196" />
-    <state width="1579" height="99" key="GridCell.Tab.0.right" timestamp="1588340623196">
+    <state width="1579" height="160" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588354744229" />
+    <state width="1579" height="160" key="GridCell.Tab.0.right" timestamp="1588354744229">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state width="1579" height="99" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588340623196" />
+    <state width="1579" height="160" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588354744229" />
+    <state x="594" y="142" key="RollbackChangesDialog" timestamp="1588351687559">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="594" y="142" key="RollbackChangesDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588351687559" />
+    <state x="496" y="162" width="607" height="536" key="find.popup" timestamp="1588354684048">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="496" y="162" width="607" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588354684048" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1588352758918">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588352758918" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/www/js/controleur.js</url>
-          <line>79</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/www/js/controleur.js</url>
           <line>65</line>

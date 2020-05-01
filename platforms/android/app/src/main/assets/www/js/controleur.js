@@ -144,3 +144,29 @@ controleur.vueFin = {
 $(document).on("pagebeforeshow", "#vueFin", function () {
     controleur.vueFin.init();
 });
+
+/// Controlleur camera
+controleur.cameraController= {
+    takePicture: function () {
+
+        modele.takePicture(
+
+            function(uneImage) {
+
+                $("#cameraImage").attr("src", uneImage.getBase64().show);
+                uneImage.insert(
+                    function () { plugins.toast.showShortCenter("Image enregistrée");},
+                    function () { plugins.toast.showShortCenter("Image non enregistrée");}
+                 );
+            },
+
+            function () { plugins.toast.showShortCenter("Impossible de prendre une photo"); }
+        );
+    }
+};
+
+$(document).on("pagebeforeshow", "#camera",
+    function () {
+        $("#cameraImage").attr("src", "").hide();
+    }
+);
