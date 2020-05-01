@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1aWkLbO02TTAXWsWgBRyUBBezoL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Run PhoneGap" type="PhoneGap" factoryName="PhoneGap/Cordova" nameIsGenerated="true">
+      <option name="myExecutable" value="C:\Users\kersalem\AppData\Roaming\npm\cordova.cmd" />
+      <option name="myWorkDir" value="$PROJECT_DIR$" />
+      <option name="myCommand" value="run" />
+      <option name="myPassParent" value="true" />
+      <option name="myPlatform" value="android" />
+      <option name="myExtraArgs" value="" />
+      <option name="hasTarget" value="false" />
+      <option name="target" value="" />
+      <method v="2">
+        <option name="PhonegapTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="PhoneGap" factoryName="PhoneGap/Cordova">
+      <option name="myExecutable" value="C:\Users\kersalem\AppData\Roaming\npm\cordova.cmd" />
+      <option name="myWorkDir" value="$PROJECT_DIR$" />
+      <option name="myCommand" value="run" />
+      <option name="myPassParent" value="true" />
+      <option name="myPlatform" value="android" />
+      <option name="myExtraArgs" value="" />
+      <option name="hasTarget" value="false" />
+      <option name="target" value="" />
+      <method v="2">
+        <option name="PhonegapTask" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="" />
+      <created>1586858681237</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586858681237</updated>
+      <workItem from="1586858682688" duration="2593000" />
+      <workItem from="1587049658948" duration="1052000" />
+      <workItem from="1587116814463" duration="978000" />
+      <workItem from="1587120782381" duration="653000" />
+      <workItem from="1587121688169" duration="599000" />
+      <workItem from="1587126543036" duration="625000" />
+      <workItem from="1587196380492" duration="1540000" />
+      <workItem from="1587198923970" duration="703000" />
+      <workItem from="1587201800904" duration="610000" />
+      <workItem from="1588328702922" duration="222000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588328924468">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588328924468" />
+    <state x="508" y="193" key="FileChooserDialogImpl" timestamp="1587121684814">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1587121684814" />
+    <state width="1402" height="220" key="GridCell.Tab.0.bottom" timestamp="1588329060043">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1402" height="220" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588329060043" />
+    <state width="1402" height="220" key="GridCell.Tab.0.center" timestamp="1588329060043">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1402" height="220" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588329060043" />
+    <state width="1402" height="220" key="GridCell.Tab.0.left" timestamp="1588329060043">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1402" height="220" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588329060043" />
+    <state width="1402" height="220" key="GridCell.Tab.0.right" timestamp="1588329060043">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1402" height="220" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588329060043" />
+  </component>
+</project>

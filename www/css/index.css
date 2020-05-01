@@ -1,0 +1,8 @@
+.mybtn:disabled {
+    opacity: 1;
+}
+
+.myimg {
+    display: block;
+    margin: auto;
+}
