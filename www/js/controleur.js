@@ -42,8 +42,11 @@ controleur.vueAccueil = {
         if (nomJoueur === "") {
             alert("Entrez un nom de joueur svp");
         } else {
+          /*  modele.dao.savePhoto(controleur.session.photo);
+            controleur.session.partieEnCours = modele.dao.insert(photo);*/
+
             // On utilise le modèle pour créer une nouvelle partie
-            controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
+            // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
             // On "propage" le nom du joueur sur toutes les vues
             $('span[data-role="nomJoueur"]').each(function () {
                 $(this).html(nomJoueur);
@@ -156,21 +159,7 @@ controleur.cameraController= {
             function(uneImage) {
                 console.log('je rentre ici 2')
                 // on récupère un objet Image
-                $("#cameraImage").attr("src", uneImage.getBase64().show);
-                uneImage.insert(
-                function () {
-                    console.log('je rentre ici 3');
-                    plugins.toast.showShortCenter("Image enregistrée");
-                    console.log('je rentre ici 4');
-
-                },
-                    function () {
-                        console.log('je rentre ici 5');
-                        plugins.toast.showShortCenter("Image non enregistrée");
-                        console.log('je rentre ici 6');
-
-                    }
-                 );
+                $("#cameraImage").attr("src", uneImage.getBase64());
             },
             // erreurCB : on affiche un message approprié
             function () {
@@ -185,6 +174,6 @@ controleur.cameraController= {
 // Pour réinitialiser le champ cameraImage à l'affichage de la page camera
 $(document).on("pagebeforeshow", "#camera",
     function () {
-        $("#cameraImage").attr("src", "").hide();
+        $("#cameraImage").attr("src", "");
     }
 );

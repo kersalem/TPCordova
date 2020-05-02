@@ -14,6 +14,16 @@ modele.Partie.CISEAU = 0;
 modele.Partie.FEUILLE = 1;
 modele.Partie.PIERRE = 2;
 
+/*modele.Partie.case1 = 0;
+modele.Partie.case2 = 1;
+modele.Partie.case3 = 2;
+modele.Partie.case4 = 3;
+modele.Partie.case5 = 4;
+modele.Partie.case6 = 5;
+modele.Partie.case7 = 6;
+modele.Partie.case8 = 7;
+modele.Partie.case9 = 8;*/
+
 // Méthodes
 modele.Partie.prototype = {
     nouveauCoup: function (coupJoueur) { // détermine le résulat d'un nouveau coup et sauvegarde le score
@@ -57,13 +67,12 @@ modele.dao = {
 }
 
 //////// classe image
-
 modele.Image = function (id, imageData) {
 // Attributs
     this.id = id;
     this.imageData = imageData; // l'image Base64
-//
-// Méthode pour obtenir l'image au format Base64 (décompressé) avec en-tête MIME
+
+    // Méthode pour obtenir l'image au format Base64 (décompressé) avec en-tête MIME
     this.getBase64 = function () {
         return "data:image/jpeg;base64," + this.imageData;
     },
@@ -85,8 +94,6 @@ modele.Image = function (id, imageData) {
 };
 
 ///////  Méthode pour capturer une image avec le téléphone encodée en Base64
-
-
 modele.takePicture = function (successCB, errorCB) {
     navigator.camera.getPicture(
         function (imageData) {
