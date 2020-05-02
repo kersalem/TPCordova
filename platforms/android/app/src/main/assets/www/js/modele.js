@@ -93,6 +93,32 @@ modele.Image = function (id, imageData) {
         };
 };
 
+modele.Image2 = function (id, imageData) {
+// Attributs
+    this.id = id;
+    this.imageData = imageData; // l'image Base64
+
+    // Méthode pour obtenir l'image au format Base64 (décompressé) avec en-tête MIME
+    this.getBase64 = function () {
+        return "data:image2/jpeg;base64," + this.imageData;
+    },
+
+        // Méthode pour insérer une nouvelle image en BD
+        this.insert = function (successCB, errorCB) {
+            var self=this; // pour pouvoir accéder à l'objet Image dans le succesCB de la requête insert
+            model.db.executeSql("INSERT INTO photos (imagedata) VALUES (?)",[this.imageData],
+                function (res) {
+                    self.id=res.insertId; // on met à jour l'id de l'Image après insertion en BD
+                    successCB.call(this);
+                },
+                function (err) {
+                    console.log("Erreur Insertion : " + err.message);
+                    errorCB.call(this);
+                }
+            );
+        };
+};
+
 ///////  Méthode pour capturer une image avec le téléphone encodée en Base64
 modele.takePicture = function (successCB, errorCB) {
     navigator.camera.getPicture(
@@ -100,6 +126,28 @@ modele.takePicture = function (successCB, errorCB) {
             // imageData contient l'image capturée au format Base64, sans en-tête MIME
             // On appelle successCB en lui transmettant une entité Image
             successCB.call(this, new modele.Image(0,imageData));
+        },
+        function (err) {
+            console.log("Erreur Capture image : " + err.message);
+            errorCB.call(this);
+        },
+        {quality: 50,
+            destinationType: navigator.camera.DestinationType.DATA_URL,
+            encodingType: navigator.camera.EncodingType.JPEG,
+            mediaType: navigator.camera.MediaType.PICTURE,
+            correctOrientation: true,
+            sourceType: navigator.camera.PictureSourceType.CAMERA,
+            cameraDirection: navigator.camera.Direction.FRONT }
+        // qualité encodage 50%, format base64 (et JPEG par défaut)
+    );
+};
+
+modele.takePicture2 = function (successCB, errorCB) {
+    navigator.camera.getPicture(
+        function (imageData) {
+            // imageData contient l'image capturée au format Base64, sans en-tête MIME
+            // On appelle successCB en lui transmettant une entité Image
+            successCB.call(this, new modele.Image2(0,imageData));
         },
         function (err) {
             console.log("Erreur Capture image : " + err.message);

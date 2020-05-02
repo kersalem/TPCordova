@@ -148,8 +148,27 @@ $(document).on("pagebeforeshow", "#vueFin", function () {
     controleur.vueFin.init();
 });
 
-/// Controlleur camera
 controleur.cameraController= {
+    takePicture2: function () {
+        // Appel méthode du modèle permettant de prendre une photo
+        console.log('je rentre ici 1')
+        window.modele.takePicture2(
+
+            // Appel méthode du modèle permettant de prendre une photo
+            function(uneImage2) {
+                console.log('je rentre ici 2')
+                // on récupère un objet Image
+                $("#cameraImage2").attr("src", uneImage2.getBase64());
+            },
+            // erreurCB : on affiche un message approprié
+            function () {
+                console.log('je rentre ici 7');
+
+                plugins.toast.showShortCenter("Impossible de prendre une photo");
+            }
+        );
+    },
+
     takePicture: function () {
         // Appel méthode du modèle permettant de prendre une photo
         console.log('je rentre ici 1')
@@ -171,9 +190,18 @@ controleur.cameraController= {
     }
 };
 
+/// Controlleur camera
+
+
 // Pour réinitialiser le champ cameraImage à l'affichage de la page camera
 $(document).on("pagebeforeshow", "#camera",
     function () {
         $("#cameraImage").attr("src", "");
+    }
+);
+
+$(document).on("pagebeforeshow", "#camera",
+    function () {
+        $("#cameraImage2").attr("src", "");
     }
 );
