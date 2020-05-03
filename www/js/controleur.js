@@ -34,11 +34,17 @@ controleur.init = function () {
 controleur.vueAccueil = {
     init: function () {
         $("#nomJoueur").val("");
+        $("#nomJoueur2").val("");
     },
 
     nouvellePartie: function () {
         // on récupère de l'information de la vue en cours
         var nomJoueur = $("#nomJoueur").val();
+        var nomJoueur2 = $("#nomJoueur2").val();
+
+        var photoJoueur = $("#cameraImage").attr("src");
+        var photoJoueur2 =  $("#cameraImage2").attr("src");
+
         if (nomJoueur === "") {
             alert("Entrez un nom de joueur svp");
         } else {
@@ -51,6 +57,15 @@ controleur.vueAccueil = {
             $('span[data-role="nomJoueur"]').each(function () {
                 $(this).html(nomJoueur);
             });
+            $('span[data-role="nomJoueur2"]').each(function () {
+                $(this).html(nomJoueur2);
+            });
+
+            $("img").each(function() {
+                var src = (photoJoueur)? photoJoueur : photoJoueur2;
+                $(this).attr("src", src);
+            });
+
             // Et on passe à une autre vue
             $.mobile.changePage("#vueJeu");
         }
@@ -67,6 +82,7 @@ controleur.vueJeu = {
     init: function () {
         // on active et on montre tous les boutons du joueur
         $("button[id^=joueur]").prop('disabled', false).show();
+        $("button[id^=joueur2]").prop('disabled', false).show();
         // on cache toutes les réponses de la machine
         $("img[id^=machine]").hide();
         // on cache la div resultat

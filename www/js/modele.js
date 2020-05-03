@@ -1,9 +1,12 @@
 var modele = {};
 
 // Le modele contient ici une seule classe : Partie
-modele.Partie = function (nomJoueur) {
+modele.Partie = function (nomJoueur, nomJoueur2, photoJoueur, photoJoueur2) {
     // atributs
     this.nomJoueur = nomJoueur;
+    this.nomJoueur2 = nomJoueur2;
+    this.photoJoueur = photoJoueur;
+    this.photoJoueur2 = photoJoueur2;
     this.nbVictoires = 0;
     this.nbDefaites = 0;
     this.nbNuls = 0;
@@ -70,17 +73,18 @@ modele.dao = {
 modele.Image = function (id, imageData) {
 // Attributs
     this.id = id;
-    this.imageData = imageData; // l'image Base64
+    // this.imageData = imageData; // l'image Base64
+    modele.photoJoueur = imageData;
 
     // Méthode pour obtenir l'image au format Base64 (décompressé) avec en-tête MIME
     this.getBase64 = function () {
-        return "data:image/jpeg;base64," + this.imageData;
+        return "data:image/jpeg;base64," + modele.photoJoueur;
     },
 
         // Méthode pour insérer une nouvelle image en BD
         this.insert = function (successCB, errorCB) {
             var self=this; // pour pouvoir accéder à l'objet Image dans le succesCB de la requête insert
-            model.db.executeSql("INSERT INTO photos (imagedata) VALUES (?)",[this.imageData],
+            model.db.executeSql("INSERT INTO photos (imagedata) VALUES (?)",[modele.photoJoueur],
                 function (res) {
                     self.id=res.insertId; // on met à jour l'id de l'Image après insertion en BD
                     successCB.call(this);
@@ -96,17 +100,17 @@ modele.Image = function (id, imageData) {
 modele.Image2 = function (id, imageData) {
 // Attributs
     this.id = id;
-    this.imageData = imageData; // l'image Base64
-
+    // this.imageData = imageData; // l'image Base64
+    modele.photoJoueur2 = imageData;
     // Méthode pour obtenir l'image au format Base64 (décompressé) avec en-tête MIME
     this.getBase64 = function () {
-        return "data:image2/jpeg;base64," + this.imageData;
+        return "data:image2/jpeg;base64," + modele.photoJoueur2;
     },
 
         // Méthode pour insérer une nouvelle image en BD
         this.insert = function (successCB, errorCB) {
             var self=this; // pour pouvoir accéder à l'objet Image dans le succesCB de la requête insert
-            model.db.executeSql("INSERT INTO photos (imagedata) VALUES (?)",[this.imageData],
+            model.db.executeSql("INSERT INTO photos (imagedata) VALUES (?)",[modele.photoJoueur2],
                 function (res) {
                     self.id=res.insertId; // on met à jour l'id de l'Image après insertion en BD
                     successCB.call(this);
@@ -163,3 +167,7 @@ modele.takePicture2 = function (successCB, errorCB) {
         // qualité encodage 50%, format base64 (et JPEG par défaut)
     );
 };
+
+$('#cameraImage').on({
+
+})
