@@ -10,26 +10,17 @@ modele.Partie = function (nomJoueur) {
 };
 
 // constantes de classe
-modele.Partie.CISEAU = 0;
+/*modele.Partie.CISEAU = 0;
 modele.Partie.FEUILLE = 1;
-modele.Partie.PIERRE = 2;
-
-/*modele.Partie.case1 = 0;
-modele.Partie.case2 = 1;
-modele.Partie.case3 = 2;
-modele.Partie.case4 = 3;
-modele.Partie.case5 = 4;
-modele.Partie.case6 = 5;
-modele.Partie.case7 = 6;
-modele.Partie.case8 = 7;
-modele.Partie.case9 = 8;*/
+modele.Partie.PIERRE = 2;*/
+modele.Partie.morpion = new Array();
 
 // Méthodes
 modele.Partie.prototype = {
     nouveauCoup: function (coupJoueur) { // détermine le résulat d'un nouveau coup et sauvegarde le score
-        var mainMachine = Math.floor(Math.random() * 3);
+        // var mainMachine = Math.floor(Math.random() * 3);
         var resultat;
-        if (mainMachine === coupJoueur) {
+/*        if (mainMachine === coupJoueur) {
             this.nbNuls++;
             resultat = {mainMachine: mainMachine, message: "Match Nul"};
         } else if ((coupJoueur === modele.Partie.CISEAU && mainMachine === modele.Partie.FEUILLE) ||
@@ -40,7 +31,7 @@ modele.Partie.prototype = {
         } else {
             this.nbDefaites++;
             resultat = {mainMachine: mainMachine, message: "Défaite"};
-        }
+        }*/
         return resultat;
     },
 };
@@ -164,7 +155,3 @@ modele.takePicture2 = function (successCB, errorCB) {
         // qualité encodage 50%, format base64 (et JPEG par défaut)
     );
 };
-
-$('#cameraImage').on({
-
-})

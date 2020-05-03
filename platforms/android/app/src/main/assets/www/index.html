@@ -105,40 +105,58 @@
         <h3>A <b><span data-role="nomJoueur" style="color:blue"></span></b> de jouer</h3>
         <div class="ui-grid-b">
             <div class="ui-block-a">
-                <img alt="Photo" src="" id="img1" onclick="controleur.vueJeu.jouer(img1)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto1" class="mybtn" onclick="controleur.vueJeu.jouer(1)">
+                    <img alt="Photo" src="" id="img1"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-b">
-                <img alt="Photo" src="" id="img2" onclick="controleur.vueJeu.jouer(img2)"
+                <button id="toto2" class="mybtn" onclick="controleur.vueJeu.jouer(2)">
+                    <img alt="Photo" src="" id="img2"
                      style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-c">
-                <img alt="Photo" src="" id="img3" onclick="controleur.vueJeu.jouer(img3)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto3" class="mybtn" onclick="controleur.vueJeu.jouer(3)">
+                    <img alt="Photo" src="" id="img3"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-a">
-                <img alt="Photo" src="" id="img4" onclick="controleur.vueJeu.jouer(img4)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto4" class="mybtn" onclick="controleur.vueJeu.jouer(4)">
+                    <img alt="Photo" src="" id="img4"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-b">
-                <img alt="Photo" src="" id="img5" onclick="controleur.vueJeu.jouer(img5)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto5" class="mybtn" onclick="controleur.vueJeu.jouer(5)">
+                    <img alt="Photo" src="" id="img5"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-c">
-                <img alt="Photo" src="" id="img6" onclick="controleur.vueJeu.jouer(img6)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto6" class="mybtn" onclick="controleur.vueJeu.jouer(6)">
+                    <img alt="Photo" src="" id="img6"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-a">
-                <img alt="Photo" src="" id="img7" onclick="controleur.vueJeu.jouer(img7)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto7" class="mybtn" onclick="controleur.vueJeu.jouer(7)">
+                    <img alt="Photo" src="" id="img7"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-b">
-                <img alt="Photo" src="" id="img8" onclick="controleur.vueJeu.jouer(img8)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto8" class="mybtn" onclick="controleur.vueJeu.jouer(8)">
+                    <img alt="Photo" src="" id="img8"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <div class="ui-block-c">
-                <img alt="Photo" src="" id="img9" onclick="controleur.vueJeu.jouer(img9)"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <button id="toto9" class="mybtn" onclick="controleur.vueJeu.jouer(9)">
+                    <img alt="Photo" src="" id="img9"
+                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </button>
             </div>
             <button class="mybtn" onclick="controleur.vueJeu.finPartie()">P3</button>
         </div>
@@ -191,12 +209,12 @@
                 <td>4</td>
             </tr>
         </table>
-        <h1>Joueur : <span data-role="nomJoueur" style="color:blue"></span></h1>
+<!--        <h1>Joueur : <span data-role="nomJoueur" style="color:blue"></span></h1>
         <p style="color:green">Victoires : <span id="nbVictoires"></span></p>
         <p style="color:orange">Nuls : <span id="nbNuls"></span></p>
         <p style="color:red">Défaites : <span id="nbDefaites"></span></p>
         <button onclick='controleur.vueFin.retourJeu()'>Continuer</button>
-        <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle Partie</button>
+        <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle Partie</button>-->
     </div>
     </div>
 </div>
