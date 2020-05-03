@@ -40,6 +40,8 @@ controleur.vueAccueil = {
     init: function () {
         $("#nomJoueur").val("");
         $("#nomJoueur2").val("");
+        $("#cameraImage").attr("src", "");
+        $("#cameraImage2").attr("src", "");
     },
 
     nouvellePartie: function () {
@@ -58,8 +60,10 @@ controleur.vueAccueil = {
         if (nomJoueur === "") {
             alert("Entrez un nom de joueur svp");
         } else {
-          /*  modele.dao.savePhoto(controleur.session.photo);
-            controleur.session.partieEnCours = modele.dao.insert(photo);*/
+            controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
+            controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur2); // charge la partie du joueur depuis le localstorage
+            /*  modele.dao.savePhoto(controleur.session.photo);
+              controleur.session.partieEnCours = modele.dao.insert(photo);*/
 
             // On utilise le modèle pour créer une nouvelle partie
 
@@ -88,6 +92,13 @@ controleur.vueJeu = {
         // on cache toutes les réponses de la machine
         // $("img[id^=machine]").hide();
         // on cache la div resultat
+        for (var id = 1; id < 10; id ++ ) {
+            $("#img" +id).attr('src', function() {
+                var src = "images/img-blanche.jpg";
+                $(this).attr("src", src);
+            });
+            $("#button" + id).prop("disabled", false);
+        }
 
         modele.Partie.morpion[0] = new Array(" "," "," ");
         modele.Partie.morpion[1] = new Array(" "," "," ");
@@ -103,16 +114,22 @@ controleur.vueJeu = {
     },
 
     jouer: function (id) {
-
-        controleur.vueJeu.nouveauCoup( modele.Partie.personneQuiJoue, id);
-        modele.Partie.prototype.nouveauCoup(id);
-        modele.Partie.personneQuiJoue = ( modele.Partie.personneQuiJoue === modele.Partie.nomJoueur)?
-            modele.Partie.nomJoueur2 : modele.Partie.nomJoueur;
-        // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
-        // On "propage" le nom du joueur sur toutes les vues
-        $('span[data-role="personneQuiJoue"]').each(function () {
-            $(this).html(modele.Partie.personneQuiJoue);
-        });
+        var lastPersonne = modele.Partie.personneQuiJoue;
+        var msgVictoire = modele.Partie.prototype.nouveauCoup(id, modele.Partie.personneQuiJoue);
+        if(msgVictoire === ("Victoire de " + modele.Partie.nomJoueur) ||
+            msgVictoire === ("Victoire de " + modele.Partie.nomJoueur2) || msgVictoire === "Match Nul") {
+            console.log('je rentre ici');
+            controleur.vueJeu.finPartie();
+        } else {
+           // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
+           // On "propage" le nom du joueur sur toutes les vues
+           $('span[data-role="personneQuiJoue"]').each(function () {
+               $(this).html(modele.Partie.personneQuiJoue);
+           });
+        }
+        if (lastPersonne !== modele.Partie.personneQuiJoue) {
+            controleur.vueJeu.nouveauCoup( modele.Partie.personneQuiJoue, id);
+        }
 
         // on interroge le modèle pour voir le résultat du nouveau coup
         // var resultat = controleur.session.partieEnCours.nouveauCoup(coupJoueur);
@@ -176,6 +193,7 @@ $(document).on("pagebeforeshow", "#vueJeu", function () {
 ////////////////////////////////////////////////////////////////////////////////
 controleur.vueFin = {
     init: function () {
+        controleur.vueJeu.init();
         $("#nbVictoires").html(controleur.session.partieEnCours.nbVictoires);
         $("#nbNuls").html(controleur.session.partieEnCours.nbNuls);
         $("#nbDefaites").html(controleur.session.partieEnCours.nbDefaites);
