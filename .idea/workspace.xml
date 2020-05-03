@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="afficher les 2 PHOTOS">
+    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="passer image à la vue jeux&#10;affichage image 1 dans les 9 cases">
+      <change afterPath="$PROJECT_DIR$/www/images/img-blanche.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/modele.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/modele.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/controleur.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/modele.js" afterDir="false" />
@@ -26,7 +34,12 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DemoPlugins" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/www/images" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projets\DemoShifumi\www\images" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="Run PhoneGap" type="PhoneGap" factoryName="PhoneGap/Cordova" nameIsGenerated="true">
@@ -77,7 +90,7 @@
       <workItem from="1587201800904" duration="610000" />
       <workItem from="1588328702922" duration="17179000" />
       <workItem from="1588401673717" duration="10537000" />
-      <workItem from="1588503281870" duration="6146000" />
+      <workItem from="1588503281870" duration="11044000" />
     </task>
     <task id="LOCAL-00001" summary="prise de photo ok">
       <created>1588354834879</created>
@@ -107,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588413456099</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="passer image à la vue jeux&#10;affichage image 1 dans les 9 cases">
+      <created>1588511257149</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1588511257149</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -118,18 +138,19 @@
     <MESSAGE value="afficher WIP" />
     <MESSAGE value="afficher photo pour un joueur" />
     <MESSAGE value="afficher les 2 PHOTOS" />
-    <option name="LAST_COMMIT_MESSAGE" value="afficher les 2 PHOTOS" />
+    <MESSAGE value="passer image à la vue jeux&#10;affichage image 1 dans les 9 cases" />
+    <option name="LAST_COMMIT_MESSAGE" value="passer image à la vue jeux&#10;affichage image 1 dans les 9 cases" />
   </component>
   <component name="WindowStateProjectService">
     <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588328924468">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588328924468" />
-    <state x="425" y="25" key="CommitChangelistDialog2" timestamp="1588508563048">
+    <state x="425" y="25" key="CommitChangelistDialog2" timestamp="1588515969877">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="-1057" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588422885423" />
-    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588508563048" />
+    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588515969877" />
     <state x="-1330" y="73" key="DiffContextDialog" timestamp="1588411363544">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
@@ -138,26 +159,26 @@
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588353329152" />
-    <state width="1579" height="47" key="GridCell.Tab.0.bottom" timestamp="1588511141581">
+    <state width="1579" height="184" key="GridCell.Tab.0.bottom" timestamp="1588515883749">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="160" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588413365398" />
-    <state width="1579" height="47" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588511141581" />
-    <state width="1579" height="47" key="GridCell.Tab.0.center" timestamp="1588511141581">
+    <state width="1579" height="184" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588515883749" />
+    <state width="1579" height="184" key="GridCell.Tab.0.center" timestamp="1588515883749">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="160" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588413365398" />
-    <state width="1579" height="47" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588511141581" />
-    <state width="1579" height="47" key="GridCell.Tab.0.left" timestamp="1588511141581">
+    <state width="1579" height="184" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588515883749" />
+    <state width="1579" height="184" key="GridCell.Tab.0.left" timestamp="1588515883749">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="160" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588413365398" />
-    <state width="1579" height="47" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588511141581" />
-    <state width="1579" height="47" key="GridCell.Tab.0.right" timestamp="1588511141581">
+    <state width="1579" height="184" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588515883749" />
+    <state width="1579" height="184" key="GridCell.Tab.0.right" timestamp="1588515883749">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="160" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588413365398" />
-    <state width="1579" height="47" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588511141581" />
+    <state width="1579" height="184" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588515883749" />
     <state x="-905" y="142" key="RollbackChangesDialog" timestamp="1588423372447">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
@@ -167,11 +188,11 @@
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
     <state x="-1348" y="92" width="1256" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588411574056" />
-    <state x="-994" y="162" width="607" height="536" key="find.popup" timestamp="1588412920949">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state x="496" y="162" width="607" height="536" key="find.popup" timestamp="1588513939163">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="-994" y="162" width="607" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588412920949" />
-    <state x="496" y="162" width="607" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588361711555" />
+    <state x="496" y="162" width="607" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588513939163" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1588352758918">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

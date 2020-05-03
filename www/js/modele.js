@@ -1,16 +1,13 @@
 var modele = {};
 
 // Le modele contient ici une seule classe : Partie
-modele.Partie = function (nomJoueur, nomJoueur2, photoJoueur, photoJoueur2) {
+modele.Partie = function (nomJoueur) {
     // atributs
     this.nomJoueur = nomJoueur;
-    this.nomJoueur2 = nomJoueur2;
-    this.photoJoueur = photoJoueur;
-    this.photoJoueur2 = photoJoueur2;
     this.nbVictoires = 0;
     this.nbDefaites = 0;
     this.nbNuls = 0;
-}
+};
 
 // constantes de classe
 modele.Partie.CISEAU = 0;

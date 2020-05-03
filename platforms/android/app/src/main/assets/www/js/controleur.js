@@ -24,6 +24,11 @@ controleur.init = function () {
     });
     // On afficher la page d'accueil
     $.mobile.changePage("#vueAccueil");
+
+    $("img").each(function() {
+        var src = "images/img-blanche.jpg";
+        $(this).attr("src", src);
+    });
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -34,11 +39,22 @@ controleur.init = function () {
 controleur.vueAccueil = {
     init: function () {
         $("#nomJoueur").val("");
+        $("#nomJoueur2").val("");
     },
 
     nouvellePartie: function () {
         // on récupère de l'information de la vue en cours
         var nomJoueur = $("#nomJoueur").val();
+        var nomJoueur2 = $("#nomJoueur2").val();
+
+        var photoJoueur = $("#cameraImage").attr("src");
+        var photoJoueur2 =  $("#cameraImage2").attr("src");
+
+        modele.Partie.nomJoueur = nomJoueur;
+        modele.Partie.nomJoueur2 = nomJoueur2;
+        modele.Partie.photoJoueur = photoJoueur;
+        modele.Partie.photoJoueur2 = photoJoueur2;
+
         if (nomJoueur === "") {
             alert("Entrez un nom de joueur svp");
         } else {
@@ -51,6 +67,15 @@ controleur.vueAccueil = {
             $('span[data-role="nomJoueur"]').each(function () {
                 $(this).html(nomJoueur);
             });
+            $('span[data-role="nomJoueur2"]').each(function () {
+                $(this).html(nomJoueur2);
+            });
+
+            /*$("img").each(function() {
+                $(this).css("background-color: white, width: 150px; height: 150px;");
+            });*/
+
+
             // Et on passe à une autre vue
             $.mobile.changePage("#vueJeu");
         }
@@ -67,19 +92,23 @@ controleur.vueJeu = {
     init: function () {
         // on active et on montre tous les boutons du joueur
         $("button[id^=joueur]").prop('disabled', false).show();
+        $("button[id^=joueur2]").prop('disabled', false).show();
         // on cache toutes les réponses de la machine
         $("img[id^=machine]").hide();
         // on cache la div resultat
         $("#resultat").hide();
     },
 
-    jouer: function (coupJoueur) {
+    jouer: function (id) {
+
+        var personneQuiJoue = modele.Partie.nomJoueur;
+        controleur.vueJeu.nouveauCoup(personneQuiJoue, id);
         // on interroge le modèle pour voir le résultat du nouveau coup
-        var resultat = controleur.session.partieEnCours.nouveauCoup(coupJoueur);
+        // var resultat = controleur.session.partieEnCours.nouveauCoup(coupJoueur);
         // le score a changé => on sauvegarde la partie en cours
-        modele.dao.savePartie(controleur.session.partieEnCours);
+       //  modele.dao.savePartie(controleur.session.partieEnCours);
         // on désactive le bouton cliqué par le joueur et on cache les autres boutons
-        switch (coupJoueur) {
+/*        switch (coupJoueur) {
             case modele.Partie.CISEAU :
                 $("#joueurCiseau").prop('disabled', true);
                 $("#joueurFeuille").hide();
@@ -94,9 +123,9 @@ controleur.vueJeu = {
                 $("#joueurPierre").prop('disabled', true);
                 $("#joueurCiseau").hide();
                 $("#joueurFeuille").hide();
-        }
+        }*/
         // on affiche le coup joué par la machine
-        switch (resultat.mainMachine) {
+        /*switch (resultat.mainMachine) {
             case modele.Partie.CISEAU :
                 $("#machineCiseau").show();
                 break;
@@ -105,20 +134,32 @@ controleur.vueJeu = {
                 break;
             case modele.Partie.PIERRE :
                 $("#machinePierre").show();
-        }
+        }*/
         // on affiche le résultat
-        var couleur = resultat.message === "Victoire" ? "green" : (resultat.message === "Défaite" ? "red" : "orange");
-        $("#texteResultat").html(resultat.message).css("color", couleur);
-        $("#resultat").show();
+        // var couleur = resultat.message === "Victoire" ? "green" : (resultat.message === "Défaite" ? "red" : "orange");
+       // $("#texteResultat").html(resultat.message).css("color", couleur);
+        // $("#resultat").show();
     },
 
-    nouveauCoup: function () {
-        controleur.vueJeu.init();
+    nouveauCoup: function (joueur, id) {
+        // controleur.vueJeu.init();
+        $(id).attr('src', function() {
+            console.log('(modele.Partie.nomJoueur === joueur', modele.Partie.nomJoueur === joueur);
+
+            var src = ((modele.Partie.nomJoueur === joueur) ?
+                modele.Partie.photoJoueur :  modele.Partie.photoJoueur2);
+            $(this).attr("src", src);
+            console.log('joueur', joueur);
+            console.log('src', src);
+        })
+
     },
 
     finPartie: function () {
         $.mobile.changePage("#vueFin");
     }
+
+
 };
 
 // On définit ici la callback exécutée au chargement de la vue Jeu

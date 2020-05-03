@@ -34,19 +34,27 @@ controleur.init = function () {
 controleur.vueAccueil = {
     init: function () {
         $("#nomJoueur").val("");
+        $("#nomJoueur2").val("");
     },
 
     nouvellePartie: function () {
         // on récupère de l'information de la vue en cours
         var nomJoueur = $("#nomJoueur").val();
+        var nomJoueur2 = $("#nomJoueur2").val();
         if (nomJoueur === "") {
             alert("Entrez un nom de joueur svp");
         } else {
+          /*  modele.dao.savePhoto(controleur.session.photo);
+            controleur.session.partieEnCours = modele.dao.insert(photo);*/
+
             // On utilise le modèle pour créer une nouvelle partie
-            controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
+            // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
             // On "propage" le nom du joueur sur toutes les vues
             $('span[data-role="nomJoueur"]').each(function () {
                 $(this).html(nomJoueur);
+            });
+            $('span[data-role="nomJoueur2"]').each(function () {
+                $(this).html(nomJoueur2);
             });
             // Et on passe à une autre vue
             $.mobile.changePage("#vueJeu");
@@ -64,6 +72,7 @@ controleur.vueJeu = {
     init: function () {
         // on active et on montre tous les boutons du joueur
         $("button[id^=joueur]").prop('disabled', false).show();
+        $("button[id^=joueur2]").prop('disabled', false).show();
         // on cache toutes les réponses de la machine
         $("img[id^=machine]").hide();
         // on cache la div resultat
@@ -144,3 +153,61 @@ controleur.vueFin = {
 $(document).on("pagebeforeshow", "#vueFin", function () {
     controleur.vueFin.init();
 });
+
+controleur.cameraController= {
+    takePicture2: function () {
+        // Appel méthode du modèle permettant de prendre une photo
+        console.log('je rentre ici 1')
+        window.modele.takePicture2(
+
+            // Appel méthode du modèle permettant de prendre une photo
+            function(uneImage2) {
+                console.log('je rentre ici 2')
+                // on récupère un objet Image
+                $("#cameraImage2").attr("src", uneImage2.getBase64());
+            },
+            // erreurCB : on affiche un message approprié
+            function () {
+                console.log('je rentre ici 7');
+
+                plugins.toast.showShortCenter("Impossible de prendre une photo");
+            }
+        );
+    },
+
+    takePicture: function () {
+        // Appel méthode du modèle permettant de prendre une photo
+        console.log('je rentre ici 1')
+        window.modele.takePicture(
+
+            // Appel méthode du modèle permettant de prendre une photo
+            function(uneImage) {
+                console.log('je rentre ici 2')
+                // on récupère un objet Image
+                $("#cameraImage").attr("src", uneImage.getBase64());
+            },
+            // erreurCB : on affiche un message approprié
+            function () {
+                console.log('je rentre ici 7');
+
+                plugins.toast.showShortCenter("Impossible de prendre une photo");
+            }
+        );
+    }
+};
+
+/// Controlleur camera
+
+
+// Pour réinitialiser le champ cameraImage à l'affichage de la page camera
+$(document).on("pagebeforeshow", "#camera",
+    function () {
+        $("#cameraImage").attr("src", "");
+    }
+);
+
+$(document).on("pagebeforeshow", "#camera",
+    function () {
+        $("#cameraImage2").attr("src", "");
+    }
+);

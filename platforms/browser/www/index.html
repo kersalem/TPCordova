@@ -80,15 +80,18 @@
                 <h3>Joueur 1</h3>
                 <p>pseudo</p>
                 <input type="text" id="nomJoueur" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
-                <button onclick="controleur.vueAccueil.nouvellePartie()">Photo</button>
-                <img src="">
+                <button onclick="controleur.cameraController.takePicture()">Prendre une photo</button>
+                <img alt="Photo" id="cameraImage" src=""
+                     style="display: none; width:150px; display: block ;margin-left: auto; margin-right: auto; border: 2px solid #ffffff;"
+                />
             </div>
             <div class="jouerIndex">
                 <h3>Joueur 2</h3>
                 <p>pseudo</p>
                 <input type="text" id="nomJoueur2" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
-                <button onclick="controleur.vueAccueil.nouvellePartie()">Photo</button>
-                <img src="" />
+                <button onclick="controleur.cameraController.takePicture2()">Prendre une photo</button>
+                <img alt="Photo" id="cameraImage2" src=""
+                     style="display: none; width:150px; display: block ;margin-left: auto; margin-right: auto; border: 2px solid #ffffff;"/>
             </div>
         </div>
         <button onclick="controleur.vueAccueil.nouvellePartie()">Jouer</button>
@@ -98,25 +101,55 @@
 <!--======== PAGE "vueJeu" - déroulement d'une partie ========-->
 <div data-role="page" id="vueJeu">
     <div data-role="main" class="ui-content ui-mini">
-        <p><b><span data-role="nomJoueur" style="color:blue"></span></b>, choisissez votre coup...</p>
+        <h3>A <b><span data-role="nomJoueur" style="color:blue"></span></b> de jouer</h3>
         <div class="ui-grid-b">
             <div class="ui-block-a">
-                <button id="joueurCiseau" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.CISEAU)">
+                <button id="toto1" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.CISEAU)">
                     <img src="images/ciseau.png">
                 </button>
             </div>
             <div class="ui-block-b">
-                <button id="joueurFeuille" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.FEUILLE)">
+                <button id="toto2" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.FEUILLE)">
                     <img src="images/feuille.png">
                 </button>
             </div>
             <div class="ui-block-c">
-                <button id="joueurPierre" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                <button id="toto3" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
                     <img src="images/pierre.png">
                 </button>
             </div>
+            <div class="ui-block-c">
+                <button id="toto4" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                    <img src="images/pierre.png">
+                </button>
+            </div>
+            <div class="ui-block-c">
+                <button id="toto5" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                    <img src="images/pierre.png">
+                </button>
+            </div>
+            <div class="ui-block-c">
+                <button id="toto6" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                    <img src="images/pierre.png">
+                </button>
+            </div>
+            <div class="ui-block-c">
+                <button id="toto7" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                    <img src="images/pierre.png">
+                </button>
+            </div>
+            <div class="ui-block-c">
+                <button id="toto8" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                    <img src="images/pierre.png">
+                </button>
+            </div>
+            <div class="ui-block-c">
+                <button id="toto9" class="mybtn" onclick="controleur.vueJeu.jouer(modele.Partie.PIERRE)">
+                    <img src="images/pierre.png">
+                </button>
+            </div>
+            <button class="mybtn" onclick="controleur.vueJeu.finPartie()">P3</button>
         </div>
-        <p>La machine va jouer en même temps que vous...</p>
         <div class="ui-grid-b">
             <div class="ui-block-a">
                 <img id="machineCiseau" src="images/ciseau.png" class="myimg">
@@ -139,12 +172,40 @@
 <!--======== PAGE "vueScore" - affiche le score ========-->
 <div data-role="page" id="vueFin">
     <div data-role="main" class="ui-content">
+
+    <h3>Fin de partie</h3>
+    <h4>Victoire de <b><span data-role="nomJoueur" style="color:blue"></span></b></h4>
+
+    <button onclick='controleur.vueFin.retourJeu()'>Rejouer</button>
+
+    <h2>Scores</h2>
+        <table>
+            <tr>
+                <th>Joueurs</th>
+                <td><th>Victoires</th>
+                <th>Nul</th>
+                <th>Défaites</th>
+            </tr>
+           <tr>
+               <td>Joueur 1 :</td>
+               <td> <span id=""></span></td>
+               <td>10</span></td>
+               <td>2</td>
+           </tr>
+            <tr>
+                <td>Joueur 2 : </td>
+                <td>6</td>
+                <td>5</td>
+                <td>4</td>
+            </tr>
+        </table>
         <h1>Joueur : <span data-role="nomJoueur" style="color:blue"></span></h1>
         <p style="color:green">Victoires : <span id="nbVictoires"></span></p>
         <p style="color:orange">Nuls : <span id="nbNuls"></span></p>
         <p style="color:red">Défaites : <span id="nbDefaites"></span></p>
         <button onclick='controleur.vueFin.retourJeu()'>Continuer</button>
         <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle Partie</button>
+    </div>
     </div>
 </div>
 </body>
