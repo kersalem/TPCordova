@@ -31,11 +31,13 @@ modele.Partie.prototype = {
 
         // Remplir tableaux
         if(coupJoueur <= 3) {
+            // Si case A n'est pas vide
             if(modele.Partie.morpion[0][coupJoueur - 1]  === " ") {
                 modele.Partie.morpion[0][coupJoueur - 1] = personneQuiJoue;
                 coupValid = true;
 
                 // ligne
+
                 if (modele.Partie.morpion[0].every((current) => current === personneQuiJoue)) {
                     victoire = true;
                 }
@@ -45,14 +47,17 @@ modele.Partie.prototype = {
                 modele.Partie.morpion[1][coupJoueur - 4] = personneQuiJoue;
                 coupValid = true;
                 // ligne
+
                 if (modele.Partie.morpion[1].every((current) => current === personneQuiJoue)) {
                     victoire = true;
                 }
             }
         } else {
+            console.log('-7', modele.Partie.morpion[0][coupJoueur - 7])
             if(modele.Partie.morpion[2][coupJoueur - 7]  === " ") {
                 modele.Partie.morpion[2][coupJoueur - 7] = personneQuiJoue;
                 coupValid = true;
+
                 // ligne
                 if (modele.Partie.morpion[2].every((current) => current === personneQuiJoue)) {
                     victoire = true;
@@ -63,9 +68,35 @@ modele.Partie.prototype = {
         // colonnes et diago
         if(coupValid) {
             // Colonne
+            /*console.log('-1', modele.Partie.morpion[0][coupJoueur - 1])
+            console.log('-4', modele.Partie.morpion[0][coupJoueur - 4])
+            console.log('-7', modele.Partie.morpion[0][coupJoueur - 7])
             if (modele.Partie.morpion[0][coupJoueur - 1] === personneQuiJoue &&
                 modele.Partie.morpion[1][coupJoueur - 4] === personneQuiJoue &&
                 modele.Partie.morpion[2][coupJoueur - 7] === personneQuiJoue) {
+                victoire = true;
+                console;log('je rentre ici victoire par colonne premeir test')
+            }*/
+
+            // première colonne
+            if (modele.Partie.morpion[0][0] === personneQuiJoue &&
+                modele.Partie.morpion[1][0] === personneQuiJoue &&
+                modele.Partie.morpion[2][0] === personneQuiJoue) {
+                console.log('colonne une')
+                victoire = true;
+            }
+            // Seconde colonne
+            if (modele.Partie.morpion[0][1] === personneQuiJoue &&
+                modele.Partie.morpion[1][1] === personneQuiJoue &&
+                modele.Partie.morpion[2][1] === personneQuiJoue) {
+                console.log('colonne 2')
+                victoire = true;
+            }
+            // Troisieme colonne
+            if (modele.Partie.morpion[0][2] === personneQuiJoue &&
+                modele.Partie.morpion[1][2] === personneQuiJoue &&
+                modele.Partie.morpion[2][2] === personneQuiJoue) {
+                console.log('colonne 3')
                 victoire = true;
             }
 

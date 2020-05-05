@@ -38,10 +38,11 @@ controleur.init = function () {
 
 controleur.vueAccueil = {
     init: function () {
-        $("#nomJoueur").val("");
-        $("#nomJoueur2").val("");
-        $("#cameraImage").attr("src", "");
-        $("#cameraImage2").attr("src", "");
+        // Commenter le tps de tester l'appli
+        // $("#nomJoueur").val("");
+        // $("#nomJoueur2").val("");
+        // $("#cameraImage").attr("src", "");
+        // $("#cameraImage2").attr("src", "");
     },
 
     nouvellePartie: function () {
