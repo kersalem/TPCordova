@@ -101,9 +101,7 @@ controleur.vueJeu = {
             $("#button" + id).prop("disabled", false);
         }
 
-        modele.Partie.morpion[0] = new Array(" "," "," ");
-        modele.Partie.morpion[1] = new Array(" "," "," ");
-        modele.Partie.morpion[2] = new Array(" "," "," ");
+        modele.Partie.prototype.init();
 
         modele.Partie.personneQuiJoue = modele.Partie.nomJoueur;
         // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage

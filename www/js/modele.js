@@ -15,14 +15,17 @@ modele.Partie = function (nomJoueur, victoire, defaite, nul) {
     }
 };
 
-// constantes de classe
-/*modele.Partie.CISEAU = 0;
-modele.Partie.FEUILLE = 1;
-modele.Partie.PIERRE = 2;*/
 modele.Partie.morpion = new Array();
 
 // Méthodes
 modele.Partie.prototype = {
+
+    init: function () {
+        modele.Partie.morpion[0] = new Array(" "," "," ");
+        modele.Partie.morpion[1] = new Array(" "," "," ");
+        modele.Partie.morpion[2] = new Array(" "," "," ");
+    },
+
     nouveauCoup: function (coupJoueur, personneQuiJoue) { // détermine le résulat d'un nouveau coup et sauvegarde le score
         // var mainMachine = Math.floor(Math.random() * 3);
         // var resultat;
