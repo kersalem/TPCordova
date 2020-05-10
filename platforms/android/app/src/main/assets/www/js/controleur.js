@@ -17,6 +17,7 @@ controleur.session = {
 ////////////////////////////////////////////////////////////////////////////////
 
 controleur.init = function () {
+    window.localStorage.clear();
     // On duplique Header et Footer sur chaque page (sauf la première !)
     $('div[data-role="page"]').each(function (i) {
         if (i > 0)
@@ -38,10 +39,11 @@ controleur.init = function () {
 
 controleur.vueAccueil = {
     init: function () {
-        $("#nomJoueur").val("");
-        $("#nomJoueur2").val("");
-        $("#cameraImage").attr("src", "");
-        $("#cameraImage2").attr("src", "");
+        // Commenter le tps de tester l'appli
+        // $("#nomJoueur").val("");
+        // $("#nomJoueur2").val("");
+        // $("#cameraImage").attr("src", "");
+        // $("#cameraImage2").attr("src", "");
     },
 
     nouvellePartie: function () {
@@ -49,7 +51,7 @@ controleur.vueAccueil = {
         var nomJoueur = $("#nomJoueur").val();
         var nomJoueur2 = $("#nomJoueur2").val();
 
-        var photoJoueur = $("#cameraImage").attr("src");
+        var photoJoueur = $("#cameraImage1").attr("src");
         var photoJoueur2 =  $("#cameraImage2").attr("src");
 
         modele.Partie.nomJoueur = nomJoueur;
@@ -61,7 +63,7 @@ controleur.vueAccueil = {
             alert("Entrez un nom de joueur svp");
         } else {
             controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
-            controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur2); // charge la partie du joueur depuis le localstorage
+            // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur2); // charge la partie du joueur depuis le localstorage
             /*  modele.dao.savePhoto(controleur.session.photo);
               controleur.session.partieEnCours = modele.dao.insert(photo);*/
 
@@ -91,7 +93,6 @@ controleur.vueJeu = {
         // $("button[id^=joueur2]").prop('disabled', false).show();
         // on cache toutes les réponses de la machine
         // $("img[id^=machine]").hide();
-        // on cache la div resultat
         for (var id = 1; id < 10; id ++ ) {
             $("#img" +id).attr('src', function() {
                 var src = "images/img-blanche.jpg";
@@ -100,9 +101,7 @@ controleur.vueJeu = {
             $("#button" + id).prop("disabled", false);
         }
 
-        modele.Partie.morpion[0] = new Array(" "," "," ");
-        modele.Partie.morpion[1] = new Array(" "," "," ");
-        modele.Partie.morpion[2] = new Array(" "," "," ");
+        modele.Partie.prototype.init();
 
         modele.Partie.personneQuiJoue = modele.Partie.nomJoueur;
         // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
@@ -110,25 +109,28 @@ controleur.vueJeu = {
         $('span[data-role="personneQuiJoue"]').each(function () {
             $(this).html(modele.Partie.personneQuiJoue);
         });
-        $("#resultat").hide();
     },
 
     jouer: function (id) {
+        console.log('id', id);
+
         var lastPersonne = modele.Partie.personneQuiJoue;
-        var msgVictoire = modele.Partie.prototype.nouveauCoup(id, modele.Partie.personneQuiJoue);
-        if(msgVictoire === ("Victoire de " + modele.Partie.nomJoueur) ||
-            msgVictoire === ("Victoire de " + modele.Partie.nomJoueur2) || msgVictoire === "Match Nul") {
-            console.log('je rentre ici');
-            controleur.vueJeu.finPartie();
-        } else {
-           // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
-           // On "propage" le nom du joueur sur toutes les vues
-           $('span[data-role="personneQuiJoue"]').each(function () {
-               $(this).html(modele.Partie.personneQuiJoue);
-           });
+        modele.Partie.resultat = controleur.session.partieEnCours.nouveauCoup(id, modele.Partie.personneQuiJoue);
+
+        if (lastPersonne !== modele.Partie.personneQuiJoue || (lastPersonne === modele.Partie.personneQuiJoue && modele.Partie.resultat !== "Partie Continue")) {
+            controleur.vueJeu.nouveauCoup(lastPersonne, id);
         }
-        if (lastPersonne !== modele.Partie.personneQuiJoue) {
-            controleur.vueJeu.nouveauCoup( modele.Partie.personneQuiJoue, id);
+
+        if(modele.Partie.resultat === "Partie Continue") {
+            // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
+            // On "propage" le nom du joueur sur toutes les vues
+            $('span[data-role="personneQuiJoue"]').each(function () {
+                $(this).html(modele.Partie.personneQuiJoue);
+            });
+        } else {
+            // modele.dao.savePartie(controleur.session.partieEnCours);
+            console.log('je rentre ici');
+            //controleur.vueJeu.finPartie(); // timeout
         }
 
         // on interroge le modèle pour voir le résultat du nouveau coup
@@ -172,8 +174,10 @@ controleur.vueJeu = {
     nouveauCoup: function (joueur, id) {
         // controleur.vueJeu.init();
         $("#img" +id).attr('src', function() {
+            console.log('joueur', joueur);
+            console.log('modele.Partie.nomJoueur', modele.Partie.nomJoueur);
             var src = ((modele.Partie.nomJoueur === joueur) ?
-                modele.Partie.photoJoueur :  modele.Partie.photoJoueur2);
+                modele.Partie.photoJoueur : modele.Partie.photoJoueur2);
             $(this).attr("src", src);
         });
         $("#button" + id).prop("disabled", true);
@@ -194,9 +198,26 @@ $(document).on("pagebeforeshow", "#vueJeu", function () {
 controleur.vueFin = {
     init: function () {
         controleur.vueJeu.init();
+        $("#message").html(modele.Partie.resultat);
         $("#nbVictoires").html(controleur.session.partieEnCours.nbVictoires);
         $("#nbNuls").html(controleur.session.partieEnCours.nbNuls);
         $("#nbDefaites").html(controleur.session.partieEnCours.nbDefaites);
+        $("#nbVictoires2").html(controleur.session.partieEnCours.nbVictoires2);
+        $("#nbNuls2").html(controleur.session.partieEnCours.nbNuls2);
+        $("#nbDefaites2").html(controleur.session.partieEnCours.nbDefaites2);
+        $("#nomJ").html(modele.Partie.nomJoueur);
+        $("#nomJ2").html(modele.Partie.nomJoueur2);
+        $("#imgGagnant").attr('src', function() {
+
+            if(modele.Partie.resultat.startsWith("Victoire de ")) {
+
+                var chaine = modele.Partie.resultat.split(" ", 3);
+                var gagnant = chaine[2];
+                var src = ((modele.Partie.nomJoueur === gagnant) ?
+                    modele.Partie.photoJoueur : modele.Partie.photoJoueur2);
+                $(this).attr("src", src);
+            }
+        });
     },
 
     retourJeu: function () {
@@ -214,43 +235,24 @@ $(document).on("pagebeforeshow", "#vueFin", function () {
 });
 
 controleur.cameraController= {
-    takePicture2: function () {
+
+    takePicture: function (joueur) {
         // Appel méthode du modèle permettant de prendre une photo
-        console.log('je rentre ici 1')
-        window.modele.takePicture2(
-
-            // Appel méthode du modèle permettant de prendre une photo
-            function(uneImage2) {
-                console.log('je rentre ici 2')
-                // on récupère un objet Image
-                $("#cameraImage2").attr("src", uneImage2.getBase64());
-            },
-            // erreurCB : on affiche un message approprié
-            function () {
-                console.log('je rentre ici 7');
-
-                plugins.toast.showShortCenter("Impossible de prendre une photo");
-            }
-        );
-    },
-
-    takePicture: function () {
-        // Appel méthode du modèle permettant de prendre une photo
-        console.log('je rentre ici 1')
         window.modele.takePicture(
 
             // Appel méthode du modèle permettant de prendre une photo
             function(uneImage) {
-                console.log('je rentre ici 2')
+                console.log('je rentre ici Controlleur ' + joueur);
                 // on récupère un objet Image
-                $("#cameraImage").attr("src", uneImage.getBase64());
+                $("#cameraImage" + joueur).attr("src", uneImage.getBase64());
             },
             // erreurCB : on affiche un message approprié
             function () {
                 console.log('je rentre ici 7');
 
                 plugins.toast.showShortCenter("Impossible de prendre une photo");
-            }
+            },
+            joueur
         );
     }
 };
@@ -259,6 +261,7 @@ controleur.cameraController= {
 
 
 // Pour réinitialiser le champ cameraImage à l'affichage de la page camera
+/*
 $(document).on("pagebeforeshow", "#camera",
     function () {
         $("#cameraImage").attr("src", "");
@@ -269,4 +272,4 @@ $(document).on("pagebeforeshow", "#camera",
     function () {
         $("#cameraImage2").attr("src", "");
     }
-);
+);*/

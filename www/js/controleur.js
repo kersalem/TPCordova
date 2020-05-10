@@ -117,7 +117,7 @@ controleur.vueJeu = {
         var lastPersonne = modele.Partie.personneQuiJoue;
         modele.Partie.resultat = controleur.session.partieEnCours.nouveauCoup(id, modele.Partie.personneQuiJoue);
 
-        if (lastPersonne !== modele.Partie.personneQuiJoue) {
+        if (lastPersonne !== modele.Partie.personneQuiJoue || (lastPersonne === modele.Partie.personneQuiJoue && modele.Partie.resultat !== "Partie Continue")) {
             controleur.vueJeu.nouveauCoup(lastPersonne, id);
         }
 
@@ -130,7 +130,7 @@ controleur.vueJeu = {
         } else {
             // modele.dao.savePartie(controleur.session.partieEnCours);
             console.log('je rentre ici');
-            controleur.vueJeu.finPartie(); // timeout
+            //controleur.vueJeu.finPartie(); // timeout
         }
 
         // on interroge le modèle pour voir le résultat du nouveau coup

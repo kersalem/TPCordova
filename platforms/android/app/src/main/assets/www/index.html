@@ -80,8 +80,8 @@
                 <h3>Joueur 1</h3>
                 <p>pseudo</p>
                 <input type="text" id="nomJoueur" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
-                <button onclick="controleur.cameraController.takePicture()">Prendre une photo</button>
-                <img alt="Photo" id="cameraImage" src=""
+                <button onclick="controleur.cameraController.takePicture(1)">Prendre une photo</button>
+                <img alt="Photo" id="cameraImage1" src=""
                      style="display: none; width:150px; display: block ;margin-left: auto; margin-right: auto; border: 2px solid #ffffff;"
                 />
             </div>
@@ -89,7 +89,7 @@
                 <h3>Joueur 2</h3>
                 <p>pseudo</p>
                 <input type="text" id="nomJoueur2" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
-                <button onclick="controleur.cameraController.takePicture2()">Prendre une photo</button>
+                <button onclick="controleur.cameraController.takePicture(2)">Prendre une photo</button>
                 <img alt="Photo" id="cameraImage2" src=""
                      style="display: none; width:150px; display: block ;margin-left: auto; margin-right: auto; border: 2px solid #ffffff;"/>
             </div>
@@ -158,24 +158,14 @@
                         style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
                 </button>
             </div>
-            <button class="mybtn" onclick="controleur.vueJeu.finPartie()">P3</button>
+<!--            <button class="mybtn" onclick="controleur.vueJeu.finPartie()">P3</button>-->
         </div>
-        <div class="ui-grid-b">
-            <div class="ui-block-a">
-                <img id="machineCiseau" />
-            </div>
-            <div class="ui-block-b">
-                <img id="machineFeuille" src="images/feuille.png" class="myimg">
-            </div>
-            <div class="ui-block-c">
-                <img id="machinePierre" src="images/pierre.png" class="myimg">
-            </div>
-        </div>
-        <div id="resultat">
+
+<!--        <div id="resultat">
             <p> Votre résultat : <b><span id="texteResultat"></span></b></p>
-            <button onclick='controleur.vueJeu.nouveauCoup()'>Rejouer</button>
+            <button onclick='controleur.vueFin.init()'>Rejouer</button>
             <button onclick='controleur.vueJeu.finPartie()'>Score</button>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -184,7 +174,9 @@
     <div data-role="main" class="ui-content">
 
     <h3>Fin de partie</h3>
-    <h4>Victoire de <b><span data-role="personneQuiJoue" style="color:blue"></span></b></h4>
+
+    <h4 id="message"></h4>
+        <img src="" id="imgGagnant" style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
 
     <button onclick='controleur.vueFin.retourJeu()'>Rejouer</button>
 
@@ -192,29 +184,29 @@
         <table>
             <tr>
                 <th>Joueurs</th>
-                <td><th>Victoires</th>
+                <th>Victoires</th>
                 <th>Nul</th>
                 <th>Défaites</th>
             </tr>
            <tr>
-               <td></td>
-               <td> <span id=""></span></td>
-               <td>10</span></td>
-               <td>2</td>
+               <td><span id="nomJ" style="color:blue"></span></td>
+               <td><span id="nbVictoires"></span></td>
+               <td><span id="nbNuls"></span></td>
+               <td><span id="nbDefaites"></span></td>
            </tr>
             <tr>
-                <td></td>
-                <td>6</td>
-                <td>5</td>
-                <td>4</td>
+                <td><span id="nomJ2" style="color:blue"></span></td>
+                <td><span id="nbVictoires2"></span></td>
+                <td><span id="nbNuls2"></span></td>
+                <td><span id="nbDefaites2"></span></td>
             </tr>
         </table>
-        <h1>Joueur : <span data-role="personneQuiJoue" style="color:blue"></span></h1>
+<!--        <h1>Joueur : <span data-role="personneQuiJoue" style="color:blue"></span></h1>
         <p style="color:green">Victoires : <span id="nbVictoires"></span></p>
         <p style="color:orange">Nuls : <span id="nbNuls"></span></p>
         <p style="color:red">Défaites : <span id="nbDefaites"></span></p>
         <button onclick='controleur.vueFin.retourJeu()'>Continuer</button>
-        <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle Partie</button>
+        <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle Partie</button>-->
     </div>
     </div>
 </div>
