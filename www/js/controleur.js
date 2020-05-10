@@ -128,8 +128,9 @@ controleur.vueJeu = {
                $(this).html(modele.Partie.personneQuiJoue);
            });
         }
+
         if (lastPersonne !== modele.Partie.personneQuiJoue) {
-            controleur.vueJeu.nouveauCoup( modele.Partie.personneQuiJoue, id);
+            controleur.vueJeu.nouveauCoup(lastPersonne, id);
         }
 
         // on interroge le modèle pour voir le résultat du nouveau coup
@@ -173,8 +174,10 @@ controleur.vueJeu = {
     nouveauCoup: function (joueur, id) {
         // controleur.vueJeu.init();
         $("#img" +id).attr('src', function() {
+            console.log('joueur', joueur);
+            console.log('modele.Partie.nomJoueur', modele.Partie.nomJoueur);
             var src = ((modele.Partie.nomJoueur === joueur) ?
-                modele.Partie.photoJoueur :  modele.Partie.photoJoueur2);
+                modele.Partie.photoJoueur : modele.Partie.photoJoueur2);
             $(this).attr("src", src);
         });
         $("#button" + id).prop("disabled", true);
@@ -241,6 +244,7 @@ controleur.cameraController= {
 
 
 // Pour réinitialiser le champ cameraImage à l'affichage de la page camera
+/*
 $(document).on("pagebeforeshow", "#camera",
     function () {
         $("#cameraImage").attr("src", "");
@@ -251,4 +255,4 @@ $(document).on("pagebeforeshow", "#camera",
     function () {
         $("#cameraImage2").attr("src", "");
     }
-);
+);*/
