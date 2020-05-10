@@ -50,7 +50,7 @@ controleur.vueAccueil = {
         var nomJoueur = $("#nomJoueur").val();
         var nomJoueur2 = $("#nomJoueur2").val();
 
-        var photoJoueur = $("#cameraImage").attr("src");
+        var photoJoueur = $("#cameraImage1").attr("src");
         var photoJoueur2 =  $("#cameraImage2").attr("src");
 
         modele.Partie.nomJoueur = nomJoueur;
@@ -215,43 +215,24 @@ $(document).on("pagebeforeshow", "#vueFin", function () {
 });
 
 controleur.cameraController= {
-    takePicture2: function () {
+
+    takePicture: function (joueur) {
         // Appel méthode du modèle permettant de prendre une photo
-        console.log('je rentre ici 1')
-        window.modele.takePicture2(
-
-            // Appel méthode du modèle permettant de prendre une photo
-            function(uneImage2) {
-                console.log('je rentre ici 2')
-                // on récupère un objet Image
-                $("#cameraImage2").attr("src", uneImage2.getBase64());
-            },
-            // erreurCB : on affiche un message approprié
-            function () {
-                console.log('je rentre ici 7');
-
-                plugins.toast.showShortCenter("Impossible de prendre une photo");
-            }
-        );
-    },
-
-    takePicture: function () {
-        // Appel méthode du modèle permettant de prendre une photo
-        console.log('je rentre ici 1')
         window.modele.takePicture(
 
             // Appel méthode du modèle permettant de prendre une photo
             function(uneImage) {
-                console.log('je rentre ici 2')
+                console.log('je rentre ici Controlleur ' + joueur);
                 // on récupère un objet Image
-                $("#cameraImage").attr("src", uneImage.getBase64());
+                $("#cameraImage" + joueur).attr("src", uneImage.getBase64());
             },
             // erreurCB : on affiche un message approprié
             function () {
                 console.log('je rentre ici 7');
 
                 plugins.toast.showShortCenter("Impossible de prendre une photo");
-            }
+            },
+            joueur
         );
     }
 };
