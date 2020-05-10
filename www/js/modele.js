@@ -1,21 +1,22 @@
 var modele = {};
 
 // Le modele contient ici une seule classe : Partie
-modele.Partie = function (nomJoueur, victoire, defaite, nul) {
+modele.Partie = function (nomJoueur, nomJoueur2) {
     // atributs
     this.nomJoueur = nomJoueur;
-    if (victoire === 0 && defaite === 0 && nul === 0) {
-        this.nbVictoires = 0;
-        this.nbDefaites = 0;
-        this.nbNuls = 0;
-    } else {
-        (victoire === 1)? this.nbVictoires = this.nbVictoires++ : null;
-        (defaite === 1)? this.nbDefaites = this.nbDefaites++ : null;
-        (nul === 1)? this.nbNuls = this.nbNuls++ : null;
-    }
+    this.nbVictoires = 0;
+    this.nbDefaites = 0;
+    this.nbNuls = 0;
+    this.nomJoueur2 = nomJoueur2;
+    this.nbVictoires2 = 0;
+    this.nbDefaites2 = 0;
+    this.nbNuls2 = 0;
 };
 
 modele.Partie.morpion = new Array();
+
+// Var globales
+modele.Partie.resultat = "";
 
 // Méthodes
 modele.Partie.prototype = {
@@ -27,10 +28,9 @@ modele.Partie.prototype = {
     },
 
     nouveauCoup: function (coupJoueur, personneQuiJoue) { // détermine le résulat d'un nouveau coup et sauvegarde le score
-        // var mainMachine = Math.floor(Math.random() * 3);
-        // var resultat;
         var victoire = false;
         var coupValid = false;
+        var colonne;
 
         // Remplir tableaux
         if(coupJoueur <= 3) {
@@ -38,9 +38,9 @@ modele.Partie.prototype = {
             if(modele.Partie.morpion[0][coupJoueur - 1]  === " ") {
                 modele.Partie.morpion[0][coupJoueur - 1] = personneQuiJoue;
                 coupValid = true;
+                colonne = coupJoueur - 1;
 
                 // ligne
-
                 if (modele.Partie.morpion[0].every((current) => current === personneQuiJoue)) {
                     victoire = true;
                 }
@@ -49,6 +49,8 @@ modele.Partie.prototype = {
             if(modele.Partie.morpion[1][coupJoueur - 4]  === " ") {
                 modele.Partie.morpion[1][coupJoueur - 4] = personneQuiJoue;
                 coupValid = true;
+                colonne = coupJoueur - 4;
+
                 // ligne
 
                 if (modele.Partie.morpion[1].every((current) => current === personneQuiJoue)) {
@@ -56,10 +58,10 @@ modele.Partie.prototype = {
                 }
             }
         } else {
-            console.log('-7', modele.Partie.morpion[0][coupJoueur - 7])
             if(modele.Partie.morpion[2][coupJoueur - 7]  === " ") {
                 modele.Partie.morpion[2][coupJoueur - 7] = personneQuiJoue;
                 coupValid = true;
+                colonne = coupJoueur - 7;
 
                 // ligne
                 if (modele.Partie.morpion[2].every((current) => current === personneQuiJoue)) {
@@ -71,17 +73,17 @@ modele.Partie.prototype = {
         // colonnes et diago
         if(coupValid) {
             // Colonne
-            /*console.log('-1', modele.Partie.morpion[0][coupJoueur - 1])
-            console.log('-4', modele.Partie.morpion[0][coupJoueur - 4])
-            console.log('-7', modele.Partie.morpion[0][coupJoueur - 7])
-            if (modele.Partie.morpion[0][coupJoueur - 1] === personneQuiJoue &&
-                modele.Partie.morpion[1][coupJoueur - 4] === personneQuiJoue &&
-                modele.Partie.morpion[2][coupJoueur - 7] === personneQuiJoue) {
+            console.log('-1', modele.Partie.morpion[0][colonne]);
+            console.log('-4', modele.Partie.morpion[1][colonne]);
+            console.log('-7', modele.Partie.morpion[2][colonne]);
+            if (modele.Partie.morpion[0][colonne] === personneQuiJoue &&
+                modele.Partie.morpion[1][colonne] === personneQuiJoue &&
+                modele.Partie.morpion[2][colonne] === personneQuiJoue) {
                 victoire = true;
-                console;log('je rentre ici victoire par colonne premeir test')
-            }*/
+                console.log('je rentre ici victoire par colonne premeir test')
+            }
 
-            // première colonne
+/*            // première colonne
             if (modele.Partie.morpion[0][0] === personneQuiJoue &&
                 modele.Partie.morpion[1][0] === personneQuiJoue &&
                 modele.Partie.morpion[2][0] === personneQuiJoue) {
@@ -101,7 +103,7 @@ modele.Partie.prototype = {
                 modele.Partie.morpion[2][2] === personneQuiJoue) {
                 console.log('colonne 3')
                 victoire = true;
-            }
+            }*/
 
             // Diagonales
             if (coupJoueur === 5) {
@@ -131,8 +133,8 @@ modele.Partie.prototype = {
                 if (modele.Partie.morpion[0].every((current) => current !== " ") &&
                     modele.Partie.morpion[1].every((current) => current !== " ") &&
                     modele.Partie.morpion[2].every((current) => current !== " ")) {
-                    modele.Partie(modele.Partie.nomJoueur, 0, 0, 1);
-                    modele.Partie(modele.Partie.nomJoueur2, 0, 0, 1);
+                    this.nbNuls++;
+                    this.nbNuls2++;
                     resultat = "Match Nul";
                 } else {
                     modele.Partie.personneQuiJoue = ( modele.Partie.personneQuiJoue === modele.Partie.nomJoueur)?
@@ -141,16 +143,17 @@ modele.Partie.prototype = {
                 }
             } else {
                 if (modele.Partie.personneQuiJoue === modele.Partie.nomJoueur) {
-                    modele.Partie(modele.Partie.nomJoueur, 1);
-                    modele.Partie(modele.Partie.nomJoueur2, 0, 1);
+                    this.nbVictoires++;
+                    this.nbDefaites2++;
                     resultat = "Victoire de " + modele.Partie.nomJoueur;
                 } else {
-                    modele.Partie(modele.Partie.nomJoueur, 0, 1);
-                    modele.Partie(modele.Partie.nomJoueur2, 1);
+                    this.nbVictoires2++;
+                    this.nbDefaites++;
                     resultat = "Victoire de " + modele.Partie.nomJoueur2;
                 }
-                resultat = "Victoire de " + modele.Partie.nomJoueur;
             }
+        } else {
+            console.log('coup non valid');
         }
 
         /*if (coupJoueur === 1 || coupJoueur === 5 || coupJoueur === 9) {
@@ -180,7 +183,6 @@ modele.Partie.prototype = {
             this.nbDefaites++;
             resultat = {mainMachine: mainMachine, message: "Défaite"};
         }*/
-        console.log('victoire', victoire);
         return resultat;
     },
 };
@@ -191,12 +193,14 @@ modele.dao = {
 
     savePartie: function(partie) { // sauvegarde la partie au format JSON dans le local storage
         window.localStorage.setItem(partie.nomJoueur, JSON.stringify(partie));
+        // window.localStorage.setItem(partie.nomJoueur2, JSON.stringify(partie));
     },
 
     loadPartie: function(nomJoueur) { // charge la partie d'un joueur, si elle existe, depuis le local storage
-        var partie = window.localStorage.getItem(nomJoueur);
-        if (partie === null) { // s'il n'y a pas de partie au nom de ce joueur, on en crée une nouvelle
-            return new modele.Partie(nomJoueur,0,0,0);
+        var partieJoueur = window.localStorage.getItem(nomJoueur);
+        // var partieJoueur2 = window.localStorage.getItem(nomJoueur2);
+        if (partieJoueur === null) { // s'il n'y a pas de partie au nom de ce joueur, on en crée une nouvelle
+            return new modele.Partie(nomJoueur, nomJoueur2, 0, 0, 0, 0, 0, 0);
         }
         else { // sinon on convertit la partie au format JSON en objet JS de la classe Partie
             partie = JSON.parse(partie); // convertit la chaine JSON en objet JS
