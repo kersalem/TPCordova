@@ -125,7 +125,10 @@ controleur.vueJeu = {
         } else {
             // modele.dao.savePartie(controleur.session.partieEnCours);
             console.log('je rentre ici');
-            controleur.vueJeu.finPartie(); // timeout
+            setTimeout(function(){
+                controleur.vueJeu.finPartie();
+            }, 1000);
+            // controleur.vueJeu.finPartie(); // timeout
         }
 
         // on interroge le modèle pour voir le résultat du nouveau coup
