@@ -27,13 +27,35 @@ div:first-child {
     border-right: 2px solid white;
 }
 
-/*
-img {
-    justify-self: center;
-    align-self: center;
-    width: 45%;
-    height:20vh;
+.imageAccueil {
+    display: none;
+    width:150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #ffffff;
+}
+
+.imageMorpion {
+    display: none;
+    width:100px;
+    display: block;
     margin: 2px;
-    padding: 5px;
-    background-color: tomato;
-}*/
+    background-size: contain;
+    background-color:white;
+    border: 2px solid #005599;
+    height: 100px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+}

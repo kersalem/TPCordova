@@ -155,34 +155,6 @@ modele.Partie.prototype = {
         } else {
             console.log('coup non valid');
         }
-
-        /*if (coupJoueur === 1 || coupJoueur === 5 || coupJoueur === 9) {
-                if (modele.Partie.morpion[0][0] === personneQuiJoue &&
-                    modele.Partie.morpion[1][1] === personneQuiJoue &&
-                    modele.Partie.morpion[2][2] === personneQuiJoue) {
-                    victoire = true;
-                }
-            }
-            if (coupJoueur === 3 || coupJoueur === 5 || coupJoueur === 7) {
-                if (modele.Partie.morpion[0][2] === personneQuiJoue &&
-                    modele.Partie.morpion[1][1] === personneQuiJoue &&
-                    modele.Partie.morpion[2][0] === personneQuiJoue) {
-                    victoire = true;
-                }
-            }*/
-
-/*        if (mainMachine === coupJoueur) {
-            this.nbNuls++;
-            resultat = {mainMachine: mainMachine, message: "Match Nul"};
-        } else if ((coupJoueur === modele.Partie.CISEAU && mainMachine === modele.Partie.FEUILLE) ||
-            (coupJoueur === modele.Partie.FEUILLE && mainMachine === modele.Partie.PIERRE) ||
-            (coupJoueur === modele.Partie.PIERRE && mainMachine === modele.Partie.CISEAU)) {
-            this.nbVictoires++;
-            resultat = {mainMachine: mainMachine, message: "Victoire"};
-        } else {
-            this.nbDefaites++;
-            resultat = {mainMachine: mainMachine, message: "Défaite"};
-        }*/
         return resultat;
     },
 };
@@ -193,12 +165,10 @@ modele.dao = {
 
     savePartie: function(partie) { // sauvegarde la partie au format JSON dans le local storage
         window.localStorage.setItem(partie.nomJoueur, JSON.stringify(partie));
-        // window.localStorage.setItem(partie.nomJoueur2, JSON.stringify(partie));
     },
 
     loadPartie: function(nomJoueur) { // charge la partie d'un joueur, si elle existe, depuis le local storage
         var partieJoueur = window.localStorage.getItem(nomJoueur);
-        // var partieJoueur2 = window.localStorage.getItem(nomJoueur2);
         if (partieJoueur === null) { // s'il n'y a pas de partie au nom de ce joueur, on en crée une nouvelle
             return new modele.Partie(nomJoueur, nomJoueur2, 0, 0, 0, 0, 0, 0);
         }

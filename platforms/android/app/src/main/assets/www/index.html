@@ -50,165 +50,141 @@
     <!-- Code JS d'initialisation de l'application cordova -->
     <script src="js/index.js"></script>
 </head>
-<body>
-<!-- Fichier HTML = PARTIE "VUE" de l'application                                -->
-<!--   composée d'une suite de 4 pages Jquery Mobile                             -->
-<!-- Le comportement de chaque page est géré par le controleur (événements JS)   -->
+    <body>
 
-<!--======== PAGE "vueChargement" - pour attendre que le périphérique soit prêt  ========-->
-<div data-role="page" id="vueChargement">
-    <header id="shifumiHeader">
-        <div data-role="header" data-position="fixed" data-id="monHeader" data-theme="b">
-            <h1>Morpions</h1>
-        </div>
-    </header>
-    <div data-role="main" class="ui-content">
-        <p>Chargement du jeu...</p>
-    </div>
-    <footer id="shifumiFooter">
-        <div data-role="footer" data-position="fixed" data-id="monFooter" data-theme="b">
-            <h3>Un jeu MVC en Cordova+Jquery Mobile</h3>
-        </div>
-    </footer>
-</div>
-
-<!--======== PAGE "vueAccueil" - saisie nom joueur  ========-->
-<div data-role="page" id="vueAccueil">
-    <div data-role="main" class="ui-content">
-        <div class="indexContainer">
-            <div class="jouerIndex">
-                <h3>Joueur 1</h3>
-                <p>pseudo</p>
-                <input type="text" id="nomJoueur" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
-                <button onclick="controleur.cameraController.takePicture(1)">Prendre une photo</button>
-                <img alt="Photo" id="cameraImage1" src=""
-                     style="display: none; width:150px; display: block ;margin-left: auto; margin-right: auto; border: 2px solid #ffffff;"
-                />
+        <!--======== PAGE "vueChargement" - pour attendre que le périphérique soit prêt  ========-->
+        <div data-role="page" id="vueChargement">
+            <header id="shifumiHeader">
+                <div data-role="header" data-position="fixed" data-id="monHeader" data-theme="b">
+                    <h1>Morpions</h1>
+                </div>
+            </header>
+            <div data-role="main" class="ui-content">
+                <p>Chargement du jeu...</p>
             </div>
-            <div class="jouerIndex">
-                <h3>Joueur 2</h3>
-                <p>pseudo</p>
-                <input type="text" id="nomJoueur2" placeholder="Entrer le nom du (de la) joueur(euse)s"/>
-                <button onclick="controleur.cameraController.takePicture(2)">Prendre une photo</button>
-                <img alt="Photo" id="cameraImage2" src=""
-                     style="display: none; width:150px; display: block ;margin-left: auto; margin-right: auto; border: 2px solid #ffffff;"/>
-            </div>
-        </div>
-        <button onclick="controleur.vueAccueil.nouvellePartie()">Jouer</button>
-    </div>
-</div>
-
-<!--======== PAGE "vueJeu" - déroulement d'une partie ========-->
-<!--<>script>$(document).ready(function () { $("#toto1").click($("#cameraImage2").attr("src", uneImage2.getBase64()) )})</script>-->
-<div data-role="page" id="vueJeu">
-    <div data-role="main" class="ui-content ui-mini">
-        <h3>A <b><span data-role="personneQuiJoue" style="color:blue"></span></b> de jouer</h3>
-        <div class="ui-grid-b">
-            <div class="ui-block-a">
-                <button id="toto1" class="mybtn" onclick="controleur.vueJeu.jouer(1)">
-                    <img alt="Photo" src="" id="img1"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-b">
-                <button id="toto2" class="mybtn" onclick="controleur.vueJeu.jouer(2)">
-                    <img alt="Photo" src="" id="img2"
-                     style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-c">
-                <button id="toto3" class="mybtn" onclick="controleur.vueJeu.jouer(3)">
-                    <img alt="Photo" src="" id="img3"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-a">
-                <button id="toto4" class="mybtn" onclick="controleur.vueJeu.jouer(4)">
-                    <img alt="Photo" src="" id="img4"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-b">
-                <button id="toto5" class="mybtn" onclick="controleur.vueJeu.jouer(5)">
-                    <img alt="Photo" src="" id="img5"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-c">
-                <button id="toto6" class="mybtn" onclick="controleur.vueJeu.jouer(6)">
-                    <img alt="Photo" src="" id="img6"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-a">
-                <button id="toto7" class="mybtn" onclick="controleur.vueJeu.jouer(7)">
-                    <img alt="Photo" src="" id="img7"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-b">
-                <button id="toto8" class="mybtn" onclick="controleur.vueJeu.jouer(8)">
-                    <img alt="Photo" src="" id="img8"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-            <div class="ui-block-c">
-                <button id="toto9" class="mybtn" onclick="controleur.vueJeu.jouer(9)">
-                    <img alt="Photo" src="" id="img9"
-                        style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
-                </button>
-            </div>
-<!--            <button class="mybtn" onclick="controleur.vueJeu.finPartie()">P3</button>-->
+            <footer id="shifumiFooter">
+                <div data-role="footer" data-position="fixed" data-id="monFooter" data-theme="b">
+                    <h3>Un jeu MVC en Cordova+Jquery Mobile</h3>
+                </div>
+            </footer>
         </div>
 
-<!--        <div id="resultat">
-            <p> Votre résultat : <b><span id="texteResultat"></span></b></p>
-            <button onclick='controleur.vueFin.init()'>Rejouer</button>
-            <button onclick='controleur.vueJeu.finPartie()'>Score</button>
-        </div>-->
-    </div>
-</div>
+        <!--======== PAGE "vueAccueil" - saisie nom joueur  ========-->
+        <div data-role="page" id="vueAccueil">
+            <div data-role="main" class="ui-content">
+                <div class="indexContainer">
 
-<!--======== PAGE "vueScore" - affiche le score ========-->
-<div data-role="page" id="vueFin">
-    <div data-role="main" class="ui-content">
+                    <div class="jouerIndex">
+                        <h3>Joueur 1</h3>
+                        <p>pseudo</p>
+                        <input type="text" id="nomJoueur" placeholder="Entrer le nom du joueur"/>
+                        <button onclick="controleur.cameraController.takePicture(1)">Prendre une photo</button>
+                        <img alt="Photo" id="cameraImage1" src="" class="imageAccueil"/>
+                    </div>
 
-    <h3>Fin de partie</h3>
+                    <div class="jouerIndex">
+                        <h3>Joueur 2</h3>
+                        <p>pseudo</p>
+                        <input type="text" id="nomJoueur2" placeholder="Entrer le nom du joueur"/>
+                        <button onclick="controleur.cameraController.takePicture(2)">Prendre une photo</button>
+                        <img alt="Photo" id="cameraImage2" src="" class="imageAccueil"/>
+                    </div>
 
-    <h4 id="message"></h4>
-        <img src="" id="imgGagnant" style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                </div>
+                <button onclick="controleur.vueAccueil.nouvellePartie()">Jouer</button>
+            </div>
+        </div>
 
-    <button onclick='controleur.vueFin.retourJeu()'>Rejouer</button>
+        <!--======== PAGE "vueJeu" - déroulement d'une partie ========-->
+        <!--<>script>$(document).ready(function () { $("#toto1").click($("#cameraImage2").attr("src", uneImage2.getBase64()) )})</script>-->
+        <div data-role="page" id="vueJeu">
+            <div data-role="main" class="ui-content ui-mini">
+                <h3>A <b><span data-role="personneQuiJoue" style="color:blue"></span></b> de jouer</h3>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <button id="toto1" class="mybtn" onclick="controleur.vueJeu.jouer(1)">
+                            <img alt="Photo" src="" id="img1" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-b">
+                        <button id="toto2" class="mybtn" onclick="controleur.vueJeu.jouer(2)">
+                            <img alt="Photo" src="" id="img2" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-c">
+                        <button id="toto3" class="mybtn" onclick="controleur.vueJeu.jouer(3)">
+                            <img alt="Photo" src="" id="img3" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-a">
+                        <button id="toto4" class="mybtn" onclick="controleur.vueJeu.jouer(4)">
+                            <img alt="Photo" src="" id="img4" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-b">
+                        <button id="toto5" class="mybtn" onclick="controleur.vueJeu.jouer(5)">
+                            <img alt="Photo" src="" id="img5" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-c">
+                        <button id="toto6" class="mybtn" onclick="controleur.vueJeu.jouer(6)">
+                            <img alt="Photo" src="" id="img6" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-a">
+                        <button id="toto7" class="mybtn" onclick="controleur.vueJeu.jouer(7)">
+                            <img alt="Photo" src="" id="img7" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-b">
+                        <button id="toto8" class="mybtn" onclick="controleur.vueJeu.jouer(8)">
+                            <img alt="Photo" src="" id="img8" class="imageMorpion"/>
+                        </button>
+                    </div>
+                    <div class="ui-block-c">
+                        <button id="toto9" class="mybtn" onclick="controleur.vueJeu.jouer(9)">
+                            <img alt="Photo" src="" id="img9" class="imageMorpion" />
+                        </button>
+                    </div>
+                    <!--<button class="mybtn" onclick="controleur.vueJeu.finPartie()">P3</button>-->
+                </div>
+            </div>
+        </div>
 
-    <h2>Scores</h2>
-        <table>
-            <tr>
-                <th>Joueurs</th>
-                <th>Victoires</th>
-                <th>Nul</th>
-                <th>Défaites</th>
-            </tr>
-           <tr>
-               <td><span id="nomJ" style="color:blue"></span></td>
-               <td><span id="nbVictoires"></span></td>
-               <td><span id="nbNuls"></span></td>
-               <td><span id="nbDefaites"></span></td>
-           </tr>
-            <tr>
-                <td><span id="nomJ2" style="color:blue"></span></td>
-                <td><span id="nbVictoires2"></span></td>
-                <td><span id="nbNuls2"></span></td>
-                <td><span id="nbDefaites2"></span></td>
-            </tr>
-        </table>
-<!--        <h1>Joueur : <span data-role="personneQuiJoue" style="color:blue"></span></h1>
-        <p style="color:green">Victoires : <span id="nbVictoires"></span></p>
-        <p style="color:orange">Nuls : <span id="nbNuls"></span></p>
-        <p style="color:red">Défaites : <span id="nbDefaites"></span></p>
-        <button onclick='controleur.vueFin.retourJeu()'>Continuer</button>
-        <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle Partie</button>-->
-    </div>
-    </div>
-</div>
-</body>
+        <!--======== PAGE "vueScore" - affiche le score ========-->
+        <div data-role="page" id="vueFin">
+            <div data-role="main" class="ui-content">
+
+            <h3>Fin de partie</h3>
+
+            <h4 id="message"></h4>
+                <img src="" id="imgGagnant" style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+
+            <button onclick='controleur.vueFin.retourJeu()'>Rejouer</button>
+
+            <h2>Scores</h2>
+                <table>
+                    <tr>
+                       <th>Joueurs</th>
+                       <th>Victoires</th>
+                       <th>Nul</th>
+                       <th>Défaites</th>
+                    </tr>
+                   <tr>
+                       <td><span id="nomJ" style="color:blue"></span></td>
+                       <td><span id="nbVictoires"></span></td>
+                       <td><span id="nbNuls"></span></td>
+                       <td><span id="nbDefaites"></span></td>
+                   </tr>
+                   <tr>
+                       <td><span id="nomJ2" style="color:blue"></span></td>
+                       <td><span id="nbVictoires2"></span></td>
+                       <td><span id="nbNuls2"></span></td>
+                       <td><span id="nbDefaites2"></span></td>
+                   </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+    </body>
 </html>
