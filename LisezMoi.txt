@@ -4,15 +4,15 @@
 
 1. Créer et configurer le projet
 --------------------------------
-- cordova create DemoShifumi
-- cd DemoShifumi
+- cordova create DemoMorpions
+- cd DemoMorpions
 - cordova platform add browser
 - cordova platform add android
 - cordova plugin add cordova-plugin-splashscreen
 
 2. Copier le code de l'application
 ----------------------------------
-A la racine du projet (répertoire DemoShifumi) :
+A la racine du projet (répertoire DemoMorpions) :
 - Remplacer le fichier config.xml existant par celui fourni dans le ZIP
 - Remplacer le répertoire www existant par celui fourni dans le ZIP
 - Copier le répertoire res fourni dans le ZIP

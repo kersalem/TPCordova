@@ -1,7 +1,7 @@
 {
-  "name": "fr.uga.iut2.lpmiaw.demoshifumi",
+  "name": "fr.uga.iut2.lpmiaw.demoMorpions",
   "version": "1.0.0",
-  "displayName": "DemoShifumi",
+  "displayName": "DemoMorpions",
   "cordova": {
     "platforms": [
       "browser",

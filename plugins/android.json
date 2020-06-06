@@ -8,17 +8,17 @@
   },
   "installed_plugins": {
     "cordova-plugin-browsersync": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
     },
     "cordova-plugin-x-toast": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
     },
     "cordova-plugin-camera": {
       "ANDROID_SUPPORT_V4_VERSION": "27.+",
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoshifumi"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
     }
   },
   "dependent_plugins": {}
