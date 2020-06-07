@@ -8,19 +8,19 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpion"
     },
     "cordova-plugin-browsersync": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpion"
     },
     "cordova-plugin-splashscreen": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpion"
     },
     "cordova-plugin-x-toast": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpion"
     },
     "cordova-plugin-camera": {
-      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpions"
+      "PACKAGE_NAME": "fr.uga.iut2.lpmiaw.demoMorpion"
     }
   },
   "dependent_plugins": {}
