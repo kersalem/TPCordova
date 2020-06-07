@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="fr.uga.iut2.lpmiaw.demoshifumi" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>DemoShifumi</name>
+<widget id="fr.uga.iut2.lpmiaw.demoMorpions" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>DemoMorpions</name>
     <description>
-        Un jeu de Shifumi en Cordova et JQuery Mobile
+        Un jeu Cordova et JQuery Mobile
     </description>
     <author email="philippe.martin@iut2.univ-grenoble-alpes.fr" href="https://www-info.iut2.univ-grenoble-alpes.fr/">
         Philippe Martin

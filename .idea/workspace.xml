@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/LisezMoi.txt" beforeDir="false" afterPath="$PROJECT_DIR$/LisezMoi.txt" afterDir="false" />
+    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="Rename project">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-android/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-android/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-browser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-browser/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-browsersync/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-browsersync/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-camera/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-camera/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-splashscreen/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-splashscreen/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-whitelist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-whitelist/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cordova-plugin-x-toast/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cordova-plugin-x-toast/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/drawable-mdpi/screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/drawable-mdpi/screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/android.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/android.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/browser.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/browser.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsersync/node_modules/glob/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsersync/node_modules/glob/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsersync/node_modules/plist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsersync/node_modules/plist/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-browsersync/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-browsersync/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-camera/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-camera/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-splashscreen/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-whitelist/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugins/cordova-plugin-x-toast/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/plugins/cordova-plugin-x-toast/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/images/ciseau.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/images/feuille.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/images/pierre.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/img/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/modele.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/controleur.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +44,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/licence-projets/DemoShifumi" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -105,6 +106,7 @@
       <workItem from="1588503281870" duration="27158000" />
       <workItem from="1588680868409" duration="3231000" />
       <workItem from="1591460158320" duration="95000" />
+      <workItem from="1591475397055" duration="17220000" />
     </task>
     <task id="LOCAL-00001" summary="prise de photo ok">
       <created>1588354834879</created>
@@ -197,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589138751182</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Rename project">
+      <created>1591475514199</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1591475514199</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,18 +227,19 @@
     <MESSAGE value="ajout fonction init array morpions dans modele. Appeler fonction dans controller" />
     <MESSAGE value="Afficher message resultat et score joueurs vue 3" />
     <MESSAGE value="Afficher la derniere image avant une victoire" />
-    <option name="LAST_COMMIT_MESSAGE" value="Afficher la derniere image avant une victoire" />
+    <MESSAGE value="Rename project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename project" />
   </component>
   <component name="WindowStateProjectService">
     <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588328924468">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588328924468" />
-    <state x="425" y="25" key="CommitChangelistDialog2" timestamp="1591474315754">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="-1057" y="25" key="CommitChangelistDialog2" timestamp="1591517527804">
+      <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="-1057" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588422885423" />
-    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591474315754" />
+    <state x="-1057" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591517527804" />
+    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591475512603" />
     <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1589138747983" />
     <state x="122" y="73" key="DiffContextDialog" timestamp="1589138708849">
       <screen x="0" y="0" width="1600" height="860" />
@@ -237,66 +247,72 @@
     <state x="-1330" y="73" key="DiffContextDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588411363544" />
     <state x="122" y="73" key="DiffContextDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588532011875" />
     <state x="122" y="73" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1589138708849" />
-    <state x="508" y="193" key="FileChooserDialogImpl" timestamp="1588353329152">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588353329152" />
-    <state width="1579" height="131" key="GridCell.Tab.0.bottom" timestamp="1591474905108">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1419" height="79" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588684109158" />
-    <state width="1579" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591474905108" />
-    <state width="776" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state width="1579" height="131" key="GridCell.Tab.0.center" timestamp="1591474905108">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1419" height="79" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588684109157" />
-    <state width="1579" height="131" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591474905108" />
-    <state width="776" height="131" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state width="1579" height="131" key="GridCell.Tab.0.left" timestamp="1591474905108">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1419" height="79" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588684109157" />
-    <state width="1579" height="131" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591474905108" />
-    <state width="776" height="131" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state width="1579" height="131" key="GridCell.Tab.0.right" timestamp="1591474905108">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1419" height="79" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588684109158" />
-    <state width="1579" height="131" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591474905108" />
-    <state width="776" height="131" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state x="-905" y="142" key="RollbackChangesDialog" timestamp="1588423372447">
+    <state x="-983" y="193" key="FileChooserDialogImpl" timestamp="1591530962837">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="-905" y="142" key="RollbackChangesDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588423372447" />
-    <state x="594" y="142" key="RollbackChangesDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588351687559" />
+    <state x="-983" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591530962837" />
+    <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588353329152" />
+    <state width="1579" height="131" key="GridCell.Tab.0.bottom" timestamp="1591549887210">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1419" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591529926849" />
+    <state width="1579" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591549887210" />
+    <state width="776" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
+    <state width="1579" height="131" key="GridCell.Tab.0.center" timestamp="1591549887194">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1419" height="131" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591529926849" />
+    <state width="1579" height="131" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591549887194" />
+    <state width="776" height="131" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
+    <state width="1579" height="131" key="GridCell.Tab.0.left" timestamp="1591549887194">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1419" height="131" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591529926849" />
+    <state width="1579" height="131" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591549887194" />
+    <state width="776" height="131" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
+    <state width="1579" height="131" key="GridCell.Tab.0.right" timestamp="1591549887194">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1419" height="131" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591529926849" />
+    <state width="1579" height="131" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591549887194" />
+    <state width="776" height="131" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
+    <state x="594" y="142" key="RollbackChangesDialog" timestamp="1591549879075">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="-905" y="142" key="RollbackChangesDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591517533994" />
+    <state x="594" y="142" key="RollbackChangesDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591549879075" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1588527066051">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588527066051" />
-    <state x="392" y="164" key="Vcs.Push.Dialog.v2" timestamp="1588532061995">
+    <state x="392" y="164" key="Vcs.Push.Dialog.v2" timestamp="1591475516152">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="392" y="164" key="Vcs.Push.Dialog.v2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588532061995" />
-    <state x="102" y="92" width="1396" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591474218069">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="392" y="164" key="Vcs.Push.Dialog.v2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591475516152" />
+    <state x="-1348" y="92" width="1256" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591521266313">
+      <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="-1348" y="92" width="1256" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588411574056" />
+    <state x="-1348" y="92" width="1256" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591521266313" />
     <state x="102" y="92" width="1396" height="676" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591474218069" />
-    <state x="496" y="162" width="737" height="536" key="find.popup" timestamp="1591475046847">
+    <state x="-994" y="162" width="607" height="536" key="find.popup" timestamp="1591528720076">
+      <screen x="-1440" y="0" width="1440" height="860" />
+    </state>
+    <state x="-994" y="162" width="607" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591528720076" />
+    <state x="496" y="162" width="737" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591475626133" />
+    <state x="496" y="162" width="607" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1589140901046" />
+    <state x="614" y="325" key="git4idea.ui.GitResetDialog" timestamp="1591548042213">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="-994" y="162" width="607" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588412920949" />
-    <state x="496" y="162" width="737" height="536" key="find.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591475046847" />
-    <state x="496" y="162" width="607" height="536" key="find.popup/0.0.1600.860@0.0.1600.860" timestamp="1589140901046" />
+    <state x="614" y="325" key="git4idea.ui.GitResetDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591548042213" />
     <state x="418" y="195" key="run.anything.popup" timestamp="1589138776711">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="-1064" y="195" key="run.anything.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588683675098" />
     <state x="418" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1589138776711" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1591473883326">
-      <screen x="0" y="0" width="1600" height="860" />
+    <state x="-1023" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1591528712915">
+      <screen x="-1440" y="0" width="1440" height="860" />
     </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591473883326" />
+    <state x="-1023" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591528712915" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591475944329" />
   </component>
 </project>

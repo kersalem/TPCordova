@@ -76,18 +76,38 @@
 
                     <div class="jouerIndex">
                         <h3>Joueur 1</h3>
-                        <p>pseudo</p>
-                        <input type="text" id="nomJoueur" placeholder="Entrer le nom du joueur"/>
-                        <button onclick="controleur.cameraController.takePicture(1)">Prendre une photo</button>
-                        <img alt="Photo" id="cameraImage1" src="" class="imageAccueil"/>
+                        <input type="text" id="nomJoueur" placeholder="Saisir nom du joueur"/>
+                        <button onclick="controleur.cameraController.takePicture(1)" id="bouton1">Prendre photo</button>
+                        <script>
+                            $(document).ready(function() {
+                                $('#bouton1').click(function() {
+                                    setTimeout(function(){
+                                        console.log("Hello");
+                                        $('.imageAccueil').slideToggle("slow");
+                                        // $('.imageAccueil').show();
+                                        }, 3000);
+                                });
+                            });
+                        </script>
+                        <img alt="Photo" id="cameraImage1" src="" class="imageAccueil" style="display: none;"/>
                     </div>
 
                     <div class="jouerIndex">
                         <h3>Joueur 2</h3>
-                        <p>pseudo</p>
-                        <input type="text" id="nomJoueur2" placeholder="Entrer le nom du joueur"/>
-                        <button onclick="controleur.cameraController.takePicture(2)">Prendre une photo</button>
-                        <img alt="Photo" id="cameraImage2" src="" class="imageAccueil"/>
+                        <input type="text" id="nomJoueur2" placeholder="Saisir nom du joueur"/>
+                        <button onclick="controleur.cameraController.takePicture(2)" id="bouton2">Prendre photo</button>
+                        <script>
+                            $(document).ready(function() {
+                                $('#bouton2').click(function() {
+                                    setTimeout(function(){
+                                        console.log("Hello");
+                                        $('.imageAccueil2').slideToggle("slow");
+                                        // $('.imageAccueil').show();
+                                    }, 3000);
+                                });
+                            });
+                        </script>
+                        <img alt="Photo" id="cameraImage2" src="" class="imageAccueil2" style="display: none;"/>
                     </div>
 
                 </div>

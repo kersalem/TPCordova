@@ -1,10 +1,10 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "DemoShifumi",
-  "short_name": "DemoShifumi",
-  "version": "fr.uga.iut2.lpmiaw.demoshifumi",
-  "description": "Un jeu de Shifumi en Cordova et JQuery Mobile",
+  "name": "DemoMorpions",
+  "short_name": "DemoMorpions",
+  "version": "fr.uga.iut2.lpmiaw.demoMorpions",
+  "description": "Un jeu Cordova et JQuery Mobile",
   "author": "Philippe Martin",
   "icons": [],
   "start_url": "index.html"

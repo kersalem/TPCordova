@@ -63,15 +63,10 @@ controleur.vueAccueil = {
             alert("Entrez un nom de joueur svp");
         } else {
             controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
-            // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur2); // charge la partie du joueur depuis le localstorage
             /*  modele.dao.savePhoto(controleur.session.photo);
               controleur.session.partieEnCours = modele.dao.insert(photo);*/
 
             // On utilise le modèle pour créer une nouvelle partie
-
-            /*$("img").each(function() {
-                $(this).css("background-color: white, width: 150px; height: 150px;");
-            });*/
 
             // Et on passe à une autre vue
             $.mobile.changePage("#vueJeu");
@@ -130,7 +125,10 @@ controleur.vueJeu = {
         } else {
             // modele.dao.savePartie(controleur.session.partieEnCours);
             console.log('je rentre ici');
-            //controleur.vueJeu.finPartie(); // timeout
+            setTimeout(function(){
+                controleur.vueJeu.finPartie();
+            }, 1000);
+            // controleur.vueJeu.finPartie(); // timeout
         }
 
         // on interroge le modèle pour voir le résultat du nouveau coup
@@ -248,28 +246,9 @@ controleur.cameraController= {
             },
             // erreurCB : on affiche un message approprié
             function () {
-                console.log('je rentre ici 7');
-
                 plugins.toast.showShortCenter("Impossible de prendre une photo");
             },
             joueur
         );
     }
 };
-
-/// Controlleur camera
-
-
-// Pour réinitialiser le champ cameraImage à l'affichage de la page camera
-/*
-$(document).on("pagebeforeshow", "#camera",
-    function () {
-        $("#cameraImage").attr("src", "");
-    }
-);
-
-$(document).on("pagebeforeshow", "#camera",
-    function () {
-        $("#cameraImage2").attr("src", "");
-    }
-);*/
