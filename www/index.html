@@ -1,33 +1,6 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
 <head>
-    <!--
-    Customize this policy to fit your own app's needs. For more guidance, see:
-        https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-    Some notes:
-        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-        * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-            * Enable inline JS: add 'unsafe-inline' to default-src
-    -->
     <meta http-equiv="Content-Security-Policy"
           content="default-src *; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
     <meta name="format-detection" content="telephone=no">
@@ -83,18 +56,28 @@
                             /*$(document).ready(function() {
                                 $('#bouton1').click(function() {
                                     setTimeout(function(){
-                                        console.log("Hello");
                                         $('.imageAccueil').slideToggle("slow");
                                         // $('.imageAccueil').show();
                                         }, 3000);
                                 });
                             });*/
-                            $(document).ready(function() {
+                            /*$(document).ready(function() {
                                 $('#nomJoueur').onchange(function() {
                                     controleur.vueAccueil.chargerPhoto(nomJoueur, cameraImage1)
                                 });
-                            });
+                            });*/
                         </script>
+
+                        <!--<script>
+
+                            $(document).ready(function() {
+                                $('#nomJoueur').autocomplete(function() {
+                                    console.log('test autocomplete');
+
+                                });
+                            });
+
+                        </script>-->
                         <img alt="Photo" id="cameraImage1" src="" class="imageAccueil"/>
                     </div>
 
@@ -109,7 +92,6 @@
                             /*$(document).ready(function() {
                                 $('#bouton2').click(function() {
                                     setTimeout(function(){
-                                        console.log("Hello");
                                         $('.imageAccueil2').slideToggle("slow");
                                         // $('.imageAccueil').show();
                                     }, 3000);
@@ -187,12 +169,12 @@
             <h3>Fin de partie</h3>
 
             <h4 id="message"></h4>
-                <img src="" id="imgGagnant" style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
+                <img src="" id="imgGagnant"/>
 
             <button onclick='controleur.vueFin.retourJeu()'>Rejouer</button>
             <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle partie</button>
 
-            <h2>Scores</h2>
+            <h4>Scores</h4>
                 <table>
                     <tr>
                        <th>Joueurs</th>
@@ -201,16 +183,16 @@
                        <th>Défaites</th>
                     </tr>
                    <tr>
-                       <td><span id="nomJ" style="color:blue"></span></td>
-                       <td><span id="nbVictoires"></span></td>
+                       <td><span id="nomJ" style="font-weight:bold"></span></td>
+                       <td><span id="nbVictoires" style="color:green"></span></td>
                        <td><span id="nbNuls"></span></td>
-                       <td><span id="nbDefaites"></span></td>
+                       <td><span id="nbDefaites" style="color:red"></span></td>
                    </tr>
                    <tr>
-                       <td><span id="nomJ2" style="color:blue"></span></td>
-                       <td><span id="nbVictoires2"></span></td>
+                       <td><span id="nomJ2" style="font-weight:bold"></span></td>
+                       <td><span id="nbVictoires2" style="color:green"></span></td>
                        <td><span id="nbNuls2"></span></td>
-                       <td><span id="nbDefaites2"></span></td>
+                       <td><span id="nbDefaites2" style="color:red"></span></td>
                    </tr>
                 </table>
             </div>
