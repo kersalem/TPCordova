@@ -56,7 +56,7 @@
         <div data-role="page" id="vueChargement">
             <header id="shifumiHeader">
                 <div data-role="header" data-position="fixed" data-id="monHeader" data-theme="b">
-                    <h1>Morpions</h1>
+                    <h1>Morpion</h1>
                 </div>
             </header>
             <div data-role="main" class="ui-content">
@@ -76,18 +76,47 @@
 
                     <div class="jouerIndex">
                         <h3>Joueur 1</h3>
-                        <p>pseudo</p>
-                        <input type="text" id="nomJoueur" placeholder="Entrer le nom du joueur"/>
-                        <button onclick="controleur.cameraController.takePicture(1)">Prendre une photo</button>
+                        <input type="text" id="nomJoueur" placeholder="Saisir nom du joueur"/>
+                        <!-- onblur="controleur.chargerPhoto(nomJoueur, cameraImage1)"-->
+                        <button onclick="controleur.cameraController.takePicture(1)" id="bouton1">Prendre photo</button>
+                        <script>
+                            /*$(document).ready(function() {
+                                $('#bouton1').click(function() {
+                                    setTimeout(function(){
+                                        console.log("Hello");
+                                        $('.imageAccueil').slideToggle("slow");
+                                        // $('.imageAccueil').show();
+                                        }, 3000);
+                                });
+                            });*/
+                            $(document).ready(function() {
+                                $('#nomJoueur').onchange(function() {
+                                    controleur.vueAccueil.chargerPhoto(nomJoueur, cameraImage1)
+                                });
+                            });
+                        </script>
                         <img alt="Photo" id="cameraImage1" src="" class="imageAccueil"/>
                     </div>
 
                     <div class="jouerIndex">
                         <h3>Joueur 2</h3>
-                        <p>pseudo</p>
-                        <input type="text" id="nomJoueur2" placeholder="Entrer le nom du joueur"/>
-                        <button onclick="controleur.cameraController.takePicture(2)">Prendre une photo</button>
-                        <img alt="Photo" id="cameraImage2" src="" class="imageAccueil"/>
+                        <input type="text" id="nomJoueur2" placeholder="Saisir nom du joueur"/>
+<!--
+                        onblur="controleur.chargerPhoto(nomJoueur2, cameraImage2)"
+-->
+                        <button onclick="controleur.cameraController.takePicture(2)" id="bouton2">Prendre photo</button>
+                        <script>
+                            /*$(document).ready(function() {
+                                $('#bouton2').click(function() {
+                                    setTimeout(function(){
+                                        console.log("Hello");
+                                        $('.imageAccueil2').slideToggle("slow");
+                                        // $('.imageAccueil').show();
+                                    }, 3000);
+                                });
+                            });*/
+                        </script>
+                        <img alt="Photo" id="cameraImage2" src="" class="imageAccueil2"/>
                     </div>
 
                 </div>
@@ -161,6 +190,7 @@
                 <img src="" id="imgGagnant" style="display: none; width:100px; display: block ;margin: 2px; background-color:white; border: 2px solid #005599; height: 100px;"/>
 
             <button onclick='controleur.vueFin.retourJeu()'>Rejouer</button>
+            <button onclick='controleur.vueFin.retourAccueil()'>Nouvelle partie</button>
 
             <h2>Scores</h2>
                 <table>

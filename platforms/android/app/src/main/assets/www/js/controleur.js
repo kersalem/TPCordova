@@ -39,7 +39,6 @@ controleur.init = function () {
 
 controleur.vueAccueil = {
     init: function () {
-        // Commenter le tps de tester l'appli
         $("#nomJoueur").val("");
         $("#nomJoueur2").val("");
         $("#cameraImage1").attr("src", "");

@@ -17,7 +17,7 @@ controleur.session = {
 ////////////////////////////////////////////////////////////////////////////////
 
 controleur.init = function () {
-    window.localStorage.clear();
+    // window.localStorage.clear();
     // On duplique Header et Footer sur chaque page (sauf la première !)
     $('div[data-role="page"]').each(function (i) {
         if (i > 0)
@@ -39,11 +39,18 @@ controleur.init = function () {
 
 controleur.vueAccueil = {
     init: function () {
-        // Commenter le tps de tester l'appli
-        // $("#nomJoueur").val("");
-        // $("#nomJoueur2").val("");
-        // $("#cameraImage").attr("src", "");
-        // $("#cameraImage2").attr("src", "");
+        $("#nomJoueur").val("");
+        $("#nomJoueur2").val("");
+        $("#cameraImage1").attr("src", "");
+        $("#cameraImage2").attr("src", "");
+    },
+
+    chargerPhoto: function(nomJoueur, cameraImage) {
+        if(modele.Partie.joueur.nom === nomJoueur) {
+            $("#" + cameraImage).attr("src", modele.Partie.joueur.photo);
+        } else if(modele.Partie.joueur2.nom === nomJoueur) {
+            $("#" + cameraImage).attr("src", modele.Partie.joueur2.photo);
+        }
     },
 
     nouvellePartie: function () {
@@ -54,15 +61,18 @@ controleur.vueAccueil = {
         var photoJoueur = $("#cameraImage1").attr("src");
         var photoJoueur2 =  $("#cameraImage2").attr("src");
 
-        modele.Partie.nomJoueur = nomJoueur;
-        modele.Partie.nomJoueur2 = nomJoueur2;
-        modele.Partie.photoJoueur = photoJoueur;
-        modele.Partie.photoJoueur2 = photoJoueur2;
+        modele.Partie.id = nomJoueur + nomJoueur2;
+        modele.Partie.joueur.nom = nomJoueur;
+        modele.Partie.joueur2.nom = nomJoueur2;
+        modele.Partie.joueur.photo = photoJoueur;
+        modele.Partie.joueur2.photo = photoJoueur2;
 
         if (nomJoueur === "") {
             alert("Entrez un nom de joueur svp");
         } else {
-            controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
+
+            controleur.session.partieEnCours = modele.dao.loadPartie( modele.Partie.joueur,  modele.Partie.joueur2); // charge la partie du joueur depuis le localstorage
+
             /*  modele.dao.savePhoto(controleur.session.photo);
               controleur.session.partieEnCours = modele.dao.insert(photo);*/
 
@@ -70,6 +80,7 @@ controleur.vueAccueil = {
 
             // Et on passe à une autre vue
             $.mobile.changePage("#vueJeu");
+
             controleur.vueJeu.init();
         }
     }
@@ -98,7 +109,7 @@ controleur.vueJeu = {
 
         modele.Partie.prototype.init();
 
-        modele.Partie.personneQuiJoue = modele.Partie.nomJoueur;
+        modele.Partie.personneQuiJoue = modele.Partie.joueur.nom;
         // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
         // On "propage" le nom du joueur sur toutes les vues
         $('span[data-role="personneQuiJoue"]').each(function () {
@@ -116,6 +127,8 @@ controleur.vueJeu = {
             controleur.vueJeu.nouveauCoup(lastPersonne, id);
         }
 
+        console.log('resultat' + modele.Partie.resultat);
+
         if(modele.Partie.resultat === "Partie Continue") {
             // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
             // On "propage" le nom du joueur sur toutes les vues
@@ -130,58 +143,23 @@ controleur.vueJeu = {
             }, 1000);
             // controleur.vueJeu.finPartie(); // timeout
         }
-
-        // on interroge le modèle pour voir le résultat du nouveau coup
-        // var resultat = controleur.session.partieEnCours.nouveauCoup(coupJoueur);
-        // le score a changé => on sauvegarde la partie en cours
-       //  modele.dao.savePartie(controleur.session.partieEnCours);
-        // on désactive le bouton cliqué par le joueur et on cache les autres boutons
-/*        switch (coupJoueur) {
-            case modele.Partie.CISEAU :
-                $("#joueurCiseau").prop('disabled', true);
-                $("#joueurFeuille").hide();
-                $("#joueurPierre").hide();
-                break;
-            case modele.Partie.FEUILLE :
-                $("#joueurFeuille").prop('disabled', true);
-                $("#joueurCiseau").hide();
-                $("#joueurPierre").hide();
-                break;
-            case modele.Partie.PIERRE :
-                $("#joueurPierre").prop('disabled', true);
-                $("#joueurCiseau").hide();
-                $("#joueurFeuille").hide();
-        }*/
-        // on affiche le coup joué par la machine
-        /*switch (resultat.mainMachine) {
-            case modele.Partie.CISEAU :
-                $("#machineCiseau").show();
-                break;
-            case modele.Partie.FEUILLE :
-                $("#machineFeuille").show();
-                break;
-            case modele.Partie.PIERRE :
-                $("#machinePierre").show();
-        }*/
-        // on affiche le résultat
-        // var couleur = resultat.message === "Victoire" ? "green" : (resultat.message === "Défaite" ? "red" : "orange");
-       // $("#texteResultat").html(resultat.message).css("color", couleur);
-        // $("#resultat").show();
     },
 
     nouveauCoup: function (joueur, id) {
         // controleur.vueJeu.init();
         $("#img" +id).attr('src', function() {
             console.log('joueur', joueur);
-            console.log('modele.Partie.nomJoueur', modele.Partie.nomJoueur);
-            var src = ((modele.Partie.nomJoueur === joueur) ?
-                modele.Partie.photoJoueur : modele.Partie.photoJoueur2);
+            console.log('modele.Partie.nomJoueur', modele.Partie.joueur.nom);
+            var src = ((modele.Partie.joueur.nom === joueur) ?
+               modele.Partie.joueur.photo: modele.Partie.joueur2.photo);
             $(this).attr("src", src);
         });
         $("#button" + id).prop("disabled", true);
     },
 
     finPartie: function () {
+        console.log('partieEnCours=', controleur.session.partieEnCours);
+        modele.dao.savePartie(controleur.session.partieEnCours);
         $.mobile.changePage("#vueFin");
     }
 
@@ -195,6 +173,7 @@ $(document).on("pagebeforeshow", "#vueJeu", function () {
 ////////////////////////////////////////////////////////////////////////////////
 controleur.vueFin = {
     init: function () {
+
         controleur.vueJeu.init();
         $("#message").html(modele.Partie.resultat);
         $("#nbVictoires").html(controleur.session.partieEnCours.nbVictoires);
@@ -203,16 +182,16 @@ controleur.vueFin = {
         $("#nbVictoires2").html(controleur.session.partieEnCours.nbVictoires2);
         $("#nbNuls2").html(controleur.session.partieEnCours.nbNuls2);
         $("#nbDefaites2").html(controleur.session.partieEnCours.nbDefaites2);
-        $("#nomJ").html(modele.Partie.nomJoueur);
-        $("#nomJ2").html(modele.Partie.nomJoueur2);
+        $("#nomJ").html(modele.Partie.joueur.nom);
+        $("#nomJ2").html(modele.Partie.joueur2.nom);
         $("#imgGagnant").attr('src', function() {
 
             if(modele.Partie.resultat.startsWith("Victoire de ")) {
 
                 var chaine = modele.Partie.resultat.split(" ", 3);
                 var gagnant = chaine[2];
-                var src = ((modele.Partie.nomJoueur === gagnant) ?
-                    modele.Partie.photoJoueur : modele.Partie.photoJoueur2);
+                var src = ((modele.Partie.joueur.nom === gagnant) ?
+                   modele.Partie.joueur.photo:modele.Partie.joueur2.photo);
                 $(this).attr("src", src);
             }
         });
@@ -224,6 +203,7 @@ controleur.vueFin = {
 
     retourAccueil: function () {
         $.mobile.changePage("#vueAccueil");
+        controleur.vueAccueil.init();
     }
 };
 

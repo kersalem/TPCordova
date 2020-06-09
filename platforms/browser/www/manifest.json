@@ -1,9 +1,9 @@
 {
   "background_color": "#FFF",
   "display": "standalone",
-  "name": "DemoMorpions",
-  "short_name": "DemoMorpions",
-  "version": "fr.uga.iut2.lpmiaw.demoMorpions",
+  "name": "DemoMorpion",
+  "short_name": "DemoMorpion",
+  "version": "fr.uga.iut2.lpmiaw.demoMorpion",
   "description": "Un jeu Cordova et JQuery Mobile",
   "author": "Philippe Martin",
   "icons": [],

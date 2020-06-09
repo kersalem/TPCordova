@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="">
+    <list default="true" id="0932179c-ceb3-4638-b3b2-b3f34b97e473" name="Default Changelist" comment="changer image chargement">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/controleur.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/xml/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/assets/www/js/modele.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/drawable-mdpi/screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/drawable-mdpi/screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/android/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/css/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/css/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/controleur.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/js/modele.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/platforms/browser/www/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/platforms/browser/www/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/www/js/controleur.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/controleur.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/js/modele.js" beforeDir="false" afterPath="$PROJECT_DIR$/www/js/modele.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +100,8 @@
       <workItem from="1591460158320" duration="95000" />
       <workItem from="1591475397055" duration="17220000" />
       <workItem from="1591550490500" duration="3060000" />
-      <workItem from="1591640137595" duration="11774000" />
+      <workItem from="1591640137595" duration="12223000" />
+      <workItem from="1591700540755" duration="569000" />
     </task>
     <task id="LOCAL-00001" summary="prise de photo ok">
       <created>1588354834879</created>
@@ -204,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1591551673742</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="preparer localstorage données">
+      <created>1591652390295</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1591652390295</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,53 +237,54 @@
     <MESSAGE value="Afficher message resultat et score joueurs vue 3" />
     <MESSAGE value="Afficher la derniere image avant une victoire" />
     <MESSAGE value="Rename project" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename project" />
+    <MESSAGE value="preparer localstorage données" />
+    <option name="LAST_COMMIT_MESSAGE" value="preparer localstorage données" />
   </component>
   <component name="WindowStateProjectService">
     <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1588328924468">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="182" y="93" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588328924468" />
-    <state x="-1057" y="25" key="CommitChangelistDialog2" timestamp="1591551671116">
-      <screen x="-1440" y="0" width="1440" height="860" />
+    <state x="425" y="25" key="CommitChangelistDialog2" timestamp="1591700847806">
+      <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="-1057" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591551671116" />
-    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591475512603" />
+    <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591700847806" />
     <state x="425" y="25" key="CommitChangelistDialog2/0.0.1600.860@0.0.1600.860" timestamp="1589138747983" />
-    <state x="122" y="73" key="DiffContextDialog" timestamp="1589138708849">
+    <state x="122" y="73" key="DiffContextDialog" timestamp="1591700845262">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="-1330" y="73" key="DiffContextDialog/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1588411363544" />
-    <state x="122" y="73" key="DiffContextDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588532011875" />
+    <state x="122" y="73" key="DiffContextDialog/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591700845262" />
     <state x="122" y="73" key="DiffContextDialog/0.0.1600.860@0.0.1600.860" timestamp="1589138708849" />
     <state x="-983" y="193" key="FileChooserDialogImpl" timestamp="1591530962837">
       <screen x="-1440" y="0" width="1440" height="860" />
     </state>
     <state x="-983" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591530962837" />
     <state x="508" y="193" key="FileChooserDialogImpl/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1588353329152" />
-    <state width="1579" height="49" key="GridCell.Tab.0.bottom" timestamp="1591652301729">
+    <state width="1579" height="49" key="GridCell.Tab.0.bottom" timestamp="1591652746553">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591556657649" />
-    <state width="1579" height="49" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652301729" />
+    <state width="1579" height="49" key="GridCell.Tab.0.bottom/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652746553" />
     <state width="776" height="131" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state width="1579" height="49" key="GridCell.Tab.0.center" timestamp="1591652301729">
+    <state width="1579" height="49" key="GridCell.Tab.0.center" timestamp="1591652746553">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="131" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591556657649" />
-    <state width="1579" height="49" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652301729" />
+    <state width="1579" height="49" key="GridCell.Tab.0.center/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652746553" />
     <state width="776" height="131" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state width="1579" height="49" key="GridCell.Tab.0.left" timestamp="1591652301729">
+    <state width="1579" height="49" key="GridCell.Tab.0.left" timestamp="1591652746553">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="131" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591556657649" />
-    <state width="1579" height="49" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652301729" />
+    <state width="1579" height="49" key="GridCell.Tab.0.left/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652746553" />
     <state width="776" height="131" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
-    <state width="1579" height="49" key="GridCell.Tab.0.right" timestamp="1591652301729">
+    <state width="1579" height="49" key="GridCell.Tab.0.right" timestamp="1591652746553">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state width="1419" height="131" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@-1440.0.1440.860" timestamp="1591556657649" />
-    <state width="1579" height="49" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652301729" />
+    <state width="1579" height="49" key="GridCell.Tab.0.right/0.0.1600.860/-1440.0.1440.860@0.0.1600.860" timestamp="1591652746553" />
     <state width="776" height="131" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1589142823919" />
     <state x="594" y="142" key="RollbackChangesDialog" timestamp="1591549879075">
       <screen x="0" y="0" width="1600" height="860" />

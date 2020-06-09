@@ -1,19 +1,32 @@
 var modele = {};
 
 // Le modele contient ici une seule classe : Partie
-modele.Partie = function (nomJoueur, nomJoueur2) {
+modele.Partie = function (id, joueur, joueur2, nbV, nbD, nbN, nbV2, nbD2, nbN2) {
     // atributs
-    this.nomJoueur = nomJoueur;
-    this.nbVictoires = 0;
-    this.nbDefaites = 0;
-    this.nbNuls = 0;
-    this.nomJoueur2 = nomJoueur2;
-    this.nbVictoires2 = 0;
-    this.nbDefaites2 = 0;
-    this.nbNuls2 = 0;
+    this.id = id;
+    this.nomJoueur = joueur.nom;
+    this.photoJoueur = joueur.photo;
+    this.nbVictoires = nbV;
+    this.nbDefaites = nbD;
+    this.nbNuls = nbN;
+    this.nomJoueur2 = joueur2.nom;
+    this.photoJoueur2 = joueur2.photo;
+    this.nbVictoires2 = nbV2;
+    this.nbDefaites2 = nbD2;
+    this.nbNuls2 = nbN2;
 };
 
 modele.Partie.morpion = new Array();
+
+modele.Partie.joueur = {
+    nom: String,
+    photo: String
+};
+
+modele.Partie.joueur2 = {
+    nom: String,
+    photo: String
+};
 
 // Var globales
 modele.Partie.resultat = "";
@@ -137,19 +150,19 @@ modele.Partie.prototype = {
                     this.nbNuls2++;
                     resultat = "Match Nul";
                 } else {
-                    modele.Partie.personneQuiJoue = ( modele.Partie.personneQuiJoue === modele.Partie.nomJoueur)?
-                        modele.Partie.nomJoueur2 : modele.Partie.nomJoueur;
+                    modele.Partie.personneQuiJoue = (modele.Partie.personneQuiJoue === modele.Partie.joueur.nom)?
+                        modele.Partie.joueur2.nom : modele.Partie.joueur.nom;
                     resultat = "Partie Continue";
                 }
             } else {
-                if (modele.Partie.personneQuiJoue === modele.Partie.nomJoueur) {
+                if (modele.Partie.personneQuiJoue === modele.Partie.joueur.nom) {
                     this.nbVictoires++;
                     this.nbDefaites2++;
-                    resultat = "Victoire de " + modele.Partie.nomJoueur;
+                    resultat = "Victoire de " + modele.Partie.joueur.nom;
                 } else {
                     this.nbVictoires2++;
                     this.nbDefaites++;
-                    resultat = "Victoire de " + modele.Partie.nomJoueur2;
+                    resultat = "Victoire de " + modele.Partie.joueur2.nom;
                 }
             }
         } else {
@@ -163,17 +176,29 @@ modele.Partie.prototype = {
 // On stocke des paires (nomJoeur, partie).
 modele.dao = {
 
+    saveJoueur: function(joueur) { // sauvegarde la partie au format JSON dans le local storage
+        window.localStorage.setItem(joueur.nom, JSON.stringify(joueur));
+    },
     savePartie: function(partie) { // sauvegarde la partie au format JSON dans le local storage
-        window.localStorage.setItem(partie.nomJoueur, JSON.stringify(partie));
+        window.localStorage.setItem(partie.id, JSON.stringify(partie));
     },
 
-    loadPartie: function(nomJoueur) { // charge la partie d'un joueur, si elle existe, depuis le local storage
-        var partieJoueur = window.localStorage.getItem(nomJoueur);
-        if (partieJoueur === null) { // s'il n'y a pas de partie au nom de ce joueur, on en crée une nouvelle
-            return new modele.Partie(nomJoueur, nomJoueur2, 0, 0, 0, 0, 0, 0);
+    loadPartie: function(joueur, joueur2) { // charge la partie d'un joueur, si elle existe, depuis le local storage
+        var partieJoueur = window.localStorage.getItem(joueur.nom);
+        var partieJoueur2 = window.localStorage.getItem(joueur2.nom);
+        var partie = window.localStorage.getItem(joueur.nom + joueur2.nom);
+
+        console.log('partieJoueur', partieJoueur);
+        console.log('partieJoueur2', partieJoueur2);
+        console.log('partie', partie);
+
+        if (partieJoueur === null || partieJoueur2 === null) { // s'il n'y a pas de partie au nom de ce joueur, on en crée une nouvelle
+            var id = joueur.nom + joueur2.nom;
+            return new modele.Partie(id, joueur, joueur2, 0, 0, 0, 0, 0, 0);
         }
         else { // sinon on convertit la partie au format JSON en objet JS de la classe Partie
             partie = JSON.parse(partie); // convertit la chaine JSON en objet JS
+            console.log('partie', partie);
             Object.setPrototypeOf(partie,modele.Partie.prototype); // attache le prototype Partie à l'objet
             return partie;
         }
