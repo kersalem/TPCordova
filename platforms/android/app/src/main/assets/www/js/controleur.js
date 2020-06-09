@@ -55,7 +55,8 @@ controleur.vueAccueil = {
     },
 
     nouvellePartie: function () {
-        // on récupère de l'information de la vue en cours
+
+        // on récupère les informations de la vue en cours donc noms joueurs + photos
         var nomJoueur = $("#nomJoueur").val();
         var nomJoueur2 = $("#nomJoueur2").val();
 
@@ -68,12 +69,13 @@ controleur.vueAccueil = {
         modele.Partie.joueur.photo = photoJoueur;
         modele.Partie.joueur2.photo = photoJoueur2;
 
-        if (nomJoueur === "") {
+        // on teste les champs noms et photos et si ok on passe à la partie jeu
+        if (nomJoueur === "" || nomJoueur2 === "") {
             alert("Entrez un nom de joueur svp");
+        } else if (photoJoueur === "images/img-blanche.jpg" || photoJoueur2 === "images/img-blanche.jpg") {
+            alert("capturer une photo svp");
         } else {
-
             controleur.session.partieEnCours = modele.dao.loadPartie( modele.Partie.joueur,  modele.Partie.joueur2); // charge la partie du joueur depuis le localstorage
-
             /*  modele.dao.savePhoto(controleur.session.photo);
               controleur.session.partieEnCours = modele.dao.insert(photo);*/
 
