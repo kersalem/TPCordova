@@ -52,32 +52,12 @@
                         <input type="text" id="nomJoueur" placeholder="Saisir nom du joueur"/>
                         <!-- onblur="controleur.chargerPhoto(nomJoueur, cameraImage1)"-->
                         <button onclick="controleur.cameraController.takePicture(1)" id="bouton1">Prendre photo</button>
+
                         <script>
-                            /*$(document).ready(function() {
-                                $('#bouton1').click(function() {
-                                    setTimeout(function(){
-                                        $('.imageAccueil').slideToggle("slow");
-                                        // $('.imageAccueil').show();
-                                        }, 3000);
-                                });
-                            });*/
-                            /*$(document).ready(function() {
-                                $('#nomJoueur').onchange(function() {
-                                    controleur.vueAccueil.chargerPhoto(nomJoueur, cameraImage1)
-                                });
-                            });*/
-                        </script>
-
-                        <!--<script>
-
-                            $(document).ready(function() {
-                                $('#nomJoueur').autocomplete(function() {
-                                    console.log('test autocomplete');
-
-                                });
+                            $('#nomJoueur').on('keyup', function() {
+                                controleur.vueAccueil.chargerPhoto();
                             });
-
-                        </script>-->
+                        </script>
                         <img alt="Photo" id="cameraImage1" src="" class="imageAccueil"/>
                     </div>
 

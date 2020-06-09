@@ -27,7 +27,7 @@ controleur.init = function () {
     $.mobile.changePage("#vueAccueil");
 
     $("img").each(function() {
-        var src = "images/img-blanche.jpg";
+        var src = "images/trump.jpg";
         $(this).attr("src", src);
     });
 };
@@ -47,6 +47,7 @@ controleur.vueAccueil = {
     },
 
     chargerPhoto: function(nomJoueur, cameraImage) {
+        console.log('key upppppppppppppp');
         if(modele.Partie.joueur.nom === nomJoueur) {
             $("#" + cameraImage).attr("src", modele.Partie.joueur.photo);
         } else if(modele.Partie.joueur2.nom === nomJoueur) {
@@ -97,11 +98,7 @@ $(document).on("pagebeforeshow", "#vueAccueil", function () {
 controleur.vueJeu = {
 
     init: function () {
-        // on active et on montre tous les boutons du joueur
-        // $("button[id^=joueur]").prop('disabled', false).show();
-        // $("button[id^=joueur2]").prop('disabled', false).show();
-        // on cache toutes les réponses de la machine
-        // $("img[id^=machine]").hide();
+
         for (var id = 1; id < 10; id ++ ) {
             $("#img" +id).attr('src', function() {
                 var src = "images/img-blanche.jpg";
