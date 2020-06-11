@@ -55,7 +55,7 @@
 
                         <script>
                             $('#nomJoueur').on('keyup', function() {
-                                controleur.vueAccueil.chargerPhoto();
+                                controleur.vueAccueil.chargerPhoto($(this).val(),'cameraImage1');
                             });
                         </script>
                         <img alt="Photo" id="cameraImage1" src="" class="imageAccueil"/>
@@ -64,19 +64,12 @@
                     <div class="jouerIndex">
                         <h3>Joueur 2</h3>
                         <input type="text" id="nomJoueur2" placeholder="Saisir nom du joueur"/>
-<!--
-                        onblur="controleur.chargerPhoto(nomJoueur2, cameraImage2)"
--->
+
                         <button onclick="controleur.cameraController.takePicture(2)" id="bouton2">Prendre photo</button>
                         <script>
-                            /*$(document).ready(function() {
-                                $('#bouton2').click(function() {
-                                    setTimeout(function(){
-                                        $('.imageAccueil2').slideToggle("slow");
-                                        // $('.imageAccueil').show();
-                                    }, 3000);
-                                });
-                            });*/
+                            $('#nomJoueur2').on('keyup', function() {
+                                controleur.vueAccueil.chargerPhoto($(this).val(),'cameraImage2');
+                            });
                         </script>
                         <img alt="Photo" id="cameraImage2" src="" class="imageAccueil2"/>
                     </div>

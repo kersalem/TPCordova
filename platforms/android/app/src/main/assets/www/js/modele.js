@@ -72,7 +72,7 @@ modele.Partie.prototype = {
                     victoire = true;
                 }
             }
-        } else { // Tableau 3
+        } else { // remplir tableau 3
             if(modele.Partie.morpion[2][coupJoueur - 7]  === " ") {
                 modele.Partie.morpion[2][coupJoueur - 7] = personneQuiJoue;
                 coupValid = true;
@@ -147,33 +147,64 @@ modele.Partie.prototype = {
 };
 
 // Objet dao pour gérer la Persistance des parties dans le local storage.
-// On stocke des paires (nomJoeur, partie).
+// On stocke des paires (nomJoueur, partie).
 modele.dao = {
 
-    saveJoueur: function(joueur) { // sauvegarde nom et photo joueur au format JSON dans le local storage
-        window.localStorage.setItem(joueur.nom, JSON.stringify(joueur));
-    },
     savePartie: function(partie) { // sauvegarde la partie au format JSON dans le local storage
-        console.log('partie = ', partie);
+        console.log('partie', partie);
+        console.log('window.localStorage modele', window.localStorage);
+        // sauvegardes des joueurs
+        window.localStorage.setItem(partie.nomJoueur, JSON.stringify(modele.Partie.joueur));
+        window.localStorage.setItem(partie.nomJoueur2, JSON.stringify(modele.Partie.joueur2));
+        // sauvegarde partie
         window.localStorage.setItem(partie.id, JSON.stringify(partie));
     },
 
-    loadPartie: function(joueur, joueur2) { // charge la partie des 2  joueurs, si elle existe, depuis le local storage
-        var partieJoueur = window.localStorage.getItem(joueur.nom);
-        console.log('partieJoueur===', partieJoueur);
-        var partieJoueur2 = window.localStorage.getItem(joueur2.nom);
-        var partie = window.localStorage.getItem(joueur.nom + joueur2.nom);
+    loadPartie: function(joueur, joueur2) { // charge la partie des 2 joueurs, si elle existe, depuis le local storage
+        var partieJoueur = window.localStorage.getItem(joueur.nom); // récupération du joueur 1
+        console.log('partieJoueur===', modele.Partie.joueur);
+        var partieJoueur2 = window.localStorage.getItem(joueur2.nom); // récupération du joueur 2
+        console.log('partieJoueur2===', modele.Partie.joueur2);
+        var partie;
+        var id = joueur.nom + joueur2.nom;  // Défini id pour une partie
+        // si joueur 1 ou 2 n'existe pas on crée une nouvelle partie
+        if (partieJoueur === null || partieJoueur2 === null) {
+            partie = new modele.Partie(id, joueur, joueur2, 0, 0, 0, 0, 0, 0);
+        } else { // les 2 joueurs existent
+            partie = window.localStorage.getItem(id); // on récup la partie qui a comme id la var id
 
-        if (partieJoueur === null || partieJoueur2 === null) { // s'il n'y a pas de partie au nom de ce joueur, on en crée une nouvelle
-            // Défini id pour une partie
-            var id = joueur.nom + joueur2.nom;
-            return new modele.Partie(id, joueur, joueur2, 0, 0, 0, 0, 0, 0);
+            console.log('partie===', partie);
+
+            if (partie === null) { // si partie n'existe pas
+                var partie2 = window.localStorage.getItem(joueur2.nom + joueur.nom); // on regarde si l'id est inversé
+                if (partie2 === null) { // il n'y a pas de partie entre les 2 joueurs
+                    partie = new modele.Partie(id, joueur, joueur2, 0, 0, 0, 0, 0, 0); // on crée une nvelle partie
+                } else { // la partie existe entre les 2 joueurs avec joueurs inversés
+                    partie2 = JSON.parse(partie2); // convertit la chaine JSON en objet JS
+                    console.log('partie2===', partie2);
+                    // On reprend la partie existante et on inverse les valeurs
+                    partie = new modele.Partie(partie2.id, joueur2, joueur, partie2.nbVictoires2, partie2.nbDefaites2, partie2.nbNuls2, partie2.nbVictoires, partie2.nbDefaites, partie2.nbNuls);
+                    console.log('partie===', partie);
+                    Object.setPrototypeOf(partie,modele.Partie.prototype); // attache le prototype Partie à l'objet
+                }
+            } else { // Une partie existe entre les 2 joueurs
+                partie = JSON.parse(partie); // convertit la chaine JSON en objet JS
+                Object.setPrototypeOf(partie,modele.Partie.prototype); // attache le prototype Partie à l'objet
+            }
         }
-        else { // sinon on convertit la partie au format JSON en objet JS de la classe Partie
-            partie = JSON.parse(partie); // convertit la chaine JSON en objet JS
-            Object.setPrototypeOf(partie,modele.Partie.prototype); // attache le prototype Partie à l'objet
-            return partie;
+
+        return partie;
+    },
+
+    // Charger photo si joueur existe dans localstorage
+    loadJoueur: function(nom) {
+        var joueur = null;
+        for (var i = 0; i < window.localStorage.length; i++) {
+            if (window.localStorage.key(i) === nom) {
+                joueur = window.localStorage.getItem(nom);
+            }
         }
+        return joueur;
     }
 };
 

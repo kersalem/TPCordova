@@ -17,7 +17,7 @@ controleur.session = {
 ////////////////////////////////////////////////////////////////////////////////
 
 controleur.init = function () {
-    // window.localStorage.clear();
+    //window.localStorage.clear();
     // On duplique Header et Footer sur chaque page (sauf la première !)
     $('div[data-role="page"]').each(function (i) {
         if (i > 0)
@@ -39,22 +39,20 @@ controleur.init = function () {
 
 controleur.vueAccueil = {
     init: function () {
-        // Vider noms et phto
+        // Vider noms et photo trump par defaut
         $("#nomJoueur").val("");
         $("#nomJoueur2").val("");
-        $("#cameraImage1").attr("src", "");
-        $("#cameraImage2").attr("src", "");
+        $("#cameraImage1").attr("src", "images/trump.jpg");
+        $("#cameraImage2").attr("src", "images/trump.jpg");
     },
 
     chargerPhoto: function(nomJoueur, cameraImage) {
-        console.log('key upppppppppppppp');
-        if(modele.Partie.joueur.nom === nomJoueur) {
-            $("#" + cameraImage).attr("src", modele.Partie.joueur.photo);
-        } else if(modele.Partie.joueur2.nom === nomJoueur) {
-            $("#" + cameraImage).attr("src", modele.Partie.joueur2.photo);
+        var joueur = modele.dao.loadJoueur(nomJoueur); // on récupère le joueur
+        if(joueur !== null) { // si il existe alors
+            joueur = JSON.parse(joueur); // convertit la chaine JSON en objet JS
+            $("#" + cameraImage).attr("src", joueur.photo); // on affecte sa photo
         }
     },
-
     nouvellePartie: function () {
 
         // on récupère les informations de la vue en cours donc noms joueurs + photos
@@ -76,11 +74,7 @@ controleur.vueAccueil = {
         } else if (photoJoueur === "images/img-blanche.jpg" || photoJoueur2 === "images/img-blanche.jpg") {
             alert("capturer une photo svp");
         } else {
-            controleur.session.partieEnCours = modele.dao.loadPartie( modele.Partie.joueur,  modele.Partie.joueur2); // charge la partie du joueur depuis le localstorage
-            /*  modele.dao.savePhoto(controleur.session.photo);
-              controleur.session.partieEnCours = modele.dao.insert(photo);*/
-
-            // On utilise le modèle pour créer une nouvelle partie
+            controleur.session.partieEnCours = modele.dao.loadPartie( modele.Partie.joueur,  modele.Partie.joueur2); // charge la partie des 2 joueurs depuis le localstorage
 
             // Et on passe à une autre vue
             $.mobile.changePage("#vueJeu");
@@ -98,7 +92,7 @@ $(document).on("pagebeforeshow", "#vueAccueil", function () {
 controleur.vueJeu = {
 
     init: function () {
-
+        // carré blanc grille morpion
         for (var id = 1; id < 10; id ++ ) {
             $("#img" +id).attr('src', function() {
                 var src = "images/img-blanche.jpg";
@@ -111,7 +105,6 @@ controleur.vueJeu = {
         modele.Partie.prototype.init();
 
         modele.Partie.personneQuiJoue = modele.Partie.joueur.nom;
-        // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
         // On "propage" le nom du joueur sur toutes les vues
         $('span[data-role="personneQuiJoue"]').each(function () {
             $(this).html(modele.Partie.personneQuiJoue);
@@ -123,27 +116,27 @@ controleur.vueJeu = {
         var lastPersonne = modele.Partie.personneQuiJoue;
         modele.Partie.resultat = controleur.session.partieEnCours.nouveauCoup(id, modele.Partie.personneQuiJoue);
 
+        // si on a changé de joueur on fait un nvo coup ou si dernier coup avant nul ou victoire
         if (lastPersonne !== modele.Partie.personneQuiJoue || (lastPersonne === modele.Partie.personneQuiJoue && modele.Partie.resultat !== "Partie Continue")) {
             controleur.vueJeu.nouveauCoup(lastPersonne, id);
         }
 
         if(modele.Partie.resultat === "Partie Continue") {
-            // controleur.session.partieEnCours = modele.dao.loadPartie(nomJoueur); // charge la partie du joueur depuis le localstorage
             // On "propage" le nom du joueur sur toutes les vues
             $('span[data-role="personneQuiJoue"]').each(function () {
                 $(this).html(modele.Partie.personneQuiJoue);
             });
         } else {
-            // modele.dao.savePartie(controleur.session.partieEnCours);
             setTimeout(function(){
                 controleur.vueJeu.finPartie();
-            }, 1000);
-            // controleur.vueJeu.finPartie(); // timeout
+            }, 300);
         }
     },
 
     nouveauCoup: function (joueur, id) {
         // controleur.vueJeu.init();
+
+        // on attribue l'image du joueur là où il a cliqué
         $("#img" +id).attr('src', function() {
             var src = ((modele.Partie.joueur.nom === joueur) ?
                modele.Partie.joueur.photo: modele.Partie.joueur2.photo);
